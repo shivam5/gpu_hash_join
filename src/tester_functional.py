@@ -1,5 +1,5 @@
 import unittest
-import join_naive as jn
+import join_pandas as jp
 import join_triton as jt
 
 class TestJoin(unittest.TestCase):
@@ -20,7 +20,7 @@ class TestJoin(unittest.TestCase):
             'order': {0:'pizza', 1:'taco'}
         }
 
-        tablejoin = jn.TableJoin(table_a, table_b)
+        tablejoin = jp.TableJoin(table_a, table_b)
         table_c = tablejoin.inner_join('id', ['id', 'name', 'order'])
 
         self.assertEqual(table_c, result)
@@ -42,7 +42,7 @@ class TestJoin(unittest.TestCase):
             'order': {0:'pizza', 1:'taco', 2:'sushi'}
         }
 
-        tablejoin = jn.TableJoin(table_a, table_b)
+        tablejoin = jp.TableJoin(table_a, table_b)
         table_c = tablejoin.inner_join('id', ['id', 'name', 'order'])
 
         self.assertEqual(table_c, result)
@@ -64,7 +64,7 @@ class TestJoin(unittest.TestCase):
             'order': {0:'pizza', 1:'pizza', 2:'taco'}
         }
 
-        tablejoin = jn.TableJoin(table_a, table_b)
+        tablejoin = jp.TableJoin(table_a, table_b)
         table_c = tablejoin.inner_join('id', ['id', 'name', 'order'])
 
         self.assertEqual(table_c, result)
