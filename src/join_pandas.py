@@ -1,6 +1,7 @@
 from typing import List
 import pandas as pd
 
+
 class TableJoin:
     def __init__(self, table_a: dict | pd.DataFrame | str, table_b: dict | pd.DataFrame | str):
         """
