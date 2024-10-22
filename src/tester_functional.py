@@ -22,6 +22,10 @@ class TestJoin(unittest.TestCase):
 
         tablejoin = jp.TableJoin(table_a, table_b)
         table_c = tablejoin.inner_join('id', ['id', 'name', 'order'])
+        # print(table_a)
+        # print(table_b)
+        # print(table_c)
+        # print("------------------------------")
 
         self.assertEqual(table_c, result)
 
