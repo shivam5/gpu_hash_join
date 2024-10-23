@@ -1,12 +1,12 @@
 # Wrapper for triton matrix multplication to implement table join lives here.
 # TODO: Create a parent class for `TableJoin` and `TableJoinTriton` to abstract out common code.
 # and it should be an abstract class. 
-
 from typing import List
 import pandas as pd
+import utils
 
 
-class TableJoin:
+class TableJoinTriton:
     def __init__(self, table_a: dict | pd.DataFrame | str, table_b: dict | pd.DataFrame | str):
         """
         Args:
@@ -53,44 +53,27 @@ class TableJoin:
             ```SELECT return_keys FROM table_a INNER JOIN table_b ON table_a.join_key = table_b.join_key
         """
         if isinstance(join_key, tuple) and len(join_key) == 2:
-            left_key, right_key = join_key
-            
+            raise NotImplementedError
 
         elif isinstance(join_key, str):
-            left_key = right_key = join_key
+            domain = list(set(self.table_a[join_key].values).union(set(self.table_b[join_key].values)))
+
+            mat_a = utils.d2mat(self.table_a, domain)
+            mat_b = utils.d2mat(self.table_b, domain)
+
+            # mult = np.dot(mat_a, mat_b.T)
+            # ai, bj = np.nonzero(mult)
+
+            result = pd.DataFrame()
+            for key in return_keys:
+                if key in self.table_a.keys():
+                    result[key] = self.table_a[key].iloc[ai].values
+                else:
+                    result[key] = self.table_b[key].iloc[bj].values
+
+            result.reset_index()
 
         else:
             raise TypeError
-        
-        # result = self.table_a.merge(self.table_b, left_on=left_key, right_on=right_key, how='inner')
-        # Rewrite this in terms of triton matrix multiplication
 
-        return result[return_keys].to_dict()
-
-    def left_join(self) -> dict:
-        """
-        Args:
-        Returns:
-        """
-        raise NotImplementedError
-
-    def right_join(self) -> dict:
-        """
-        Args:
-        Returns:
-        """
-        raise NotImplementedError
-
-    def full_outer_join(self) -> dict:
-        """
-        Args:
-        Returns:
-        """
-        raise NotImplementedError
-
-    def cross_join(self) -> dict:
-        """
-        Args:
-        Returns:
-        """
-        raise NotImplementedError
+        return result.to_dict()

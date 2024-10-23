@@ -10,6 +10,12 @@ Or follow the steps manally if some step gives error
 # How to run
 
 source gpu_hash_join/bin/activate
+Activate conda environment
+```
+conda activate ./env
+or
+conda activate /home/hice1/smittal98/gpu_hash_join/env
+```
 
 Test joins
 ```

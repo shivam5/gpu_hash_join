@@ -1,3 +1,5 @@
-torch
 triton
+torch
 numpy
+matplotlib
+pandas

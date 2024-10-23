@@ -225,7 +225,7 @@ if __name__ == "__main__":
     a = torch.randn((512, 512), device='cuda', dtype=torch.float16)
     b = torch.randn((512, 512), device='cuda', dtype=torch.float16)
     triton_output = matmul(a, b)
-    torch_output = torch.matmul(a, b)
+    # torch_output = torch.matmul(a, b)
     print(f"triton_output_with_fp16_inputs={triton_output}")
     print(f"torch_output_with_fp16_inputs={torch_output}")
     # Bigger tolerance for AMD MI200 devices.
