@@ -162,3 +162,4 @@ cython_debug/
 #.idea/
 gpu_hash_join/
 hash_join_env/
+a.out
