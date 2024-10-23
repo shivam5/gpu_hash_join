@@ -62,5 +62,22 @@ class TestJoin(unittest.TestCase):
 
         self.assertEqual(table_c, result)
 
-if __name__ == "__main__":
+def suite():
+    suite = unittest.TestSuite()
+    # Add tests in the specific order you want
+    suite.addTest(TestJoin('test_inner_join_simple_numpy'))
+    suite.addTest(TestJoin('test_inner_join_nonunique_numpy'))
+    suite.addTest(TestJoin('test_inner_join_nonunique2_numpy'))
+    return suite
+
+if __name__ == '__main__':
+    # Running in parallel
     unittest.main()
+
+    # Running in serial
+    runner = unittest.TextTestRunner()
+    runner.run(suite())
+
+
+
+# if __name__ == "__main__":

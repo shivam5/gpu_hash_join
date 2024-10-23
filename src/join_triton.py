@@ -67,18 +67,9 @@ class TableJoinTriton:
             # Convert mat_a, mat_b (np.ndarray) to torch tensors
             # Perform matrix multiplication
             torch_mat_a = torch.tensor(mat_a, dtype=torch.float16, device='cuda')
-            torch_mat_b = torch.tensor(mat_b, dtype=torch.float16, device='cuda')
-            result = matmul(torch_mat_a, torch_mat_b)
-
-
-            mult = np.dot(mat_a, mat_b.T)
-
-            print(f"result={result}")
-            print(f"mult={mult}")
-
-
+            torch_mat_b_t = torch.tensor(mat_b.T, dtype=torch.float16, device='cuda')
+            result = matmul(torch_mat_a, torch_mat_b_t).cpu().numpy()
             ai, bj = np.nonzero(result)
-            print(f"ai={ai}, bj={bj}")
 
             result = pd.DataFrame()
             for key in return_keys:
