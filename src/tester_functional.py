@@ -1,6 +1,7 @@
 import unittest
 import join_pandas as jp
 import join_numpy as jn
+import join_triton as jt
 
 
 class TestJoin(unittest.TestCase):
@@ -15,7 +16,7 @@ class TestJoin(unittest.TestCase):
             'order': {0:'pizza', 1:'taco', 2:'sushi', 3:'sandwitch'}
         }
 
-        tablejoinmatrix = jn.TableJoinNumpy(table_a, table_b)
+        tablejoinmatrix = jt.TableJoinTriton(table_a, table_b)
         table_c = tablejoinmatrix.inner_join('id', ['id', 'name', 'order'])
 
         tablejoinpandas = jp.TableJoin(table_a, table_b)
@@ -34,7 +35,7 @@ class TestJoin(unittest.TestCase):
             'order': {0:'pizza', 1:'taco', 2:'sushi', 3:'sandwitch'}
         }
 
-        tablejoinmatrix = jn.TableJoinNumpy(table_a, table_b)
+        tablejoinmatrix = jt.TableJoinTriton(table_a, table_b)
         table_c = tablejoinmatrix.inner_join('id', ['id', 'name', 'order'])
 
         tablejoinpandas = jp.TableJoin(table_a, table_b)
@@ -53,7 +54,7 @@ class TestJoin(unittest.TestCase):
             'order': {0:'pizza', 1:'taco', 2:'sushi', 3:'sandwitch'}
         }
 
-        tablejoinmatrix = jn.TableJoinNumpy(table_a, table_b)
+        tablejoinmatrix = jt.TableJoinTriton(table_a, table_b)
         table_c = tablejoinmatrix.inner_join('id', ['id', 'name', 'order'])
 
         tablejoinpandas = jp.TableJoin(table_a, table_b)

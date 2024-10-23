@@ -4,6 +4,9 @@
 from typing import List
 import pandas as pd
 import utils
+from triton_matmul import matmul
+import torch
+import numpy as np
 
 
 class TableJoinTriton:
@@ -61,8 +64,21 @@ class TableJoinTriton:
             mat_a = utils.d2mat(self.table_a, domain)
             mat_b = utils.d2mat(self.table_b, domain)
 
-            # mult = np.dot(mat_a, mat_b.T)
-            # ai, bj = np.nonzero(mult)
+            # Convert mat_a, mat_b (np.ndarray) to torch tensors
+            # Perform matrix multiplication
+            torch_mat_a = torch.tensor(mat_a, dtype=torch.float16, device='cuda')
+            torch_mat_b = torch.tensor(mat_b, dtype=torch.float16, device='cuda')
+            result = matmul(torch_mat_a, torch_mat_b)
+
+
+            mult = np.dot(mat_a, mat_b.T)
+
+            print(f"result={result}")
+            print(f"mult={mult}")
+
+
+            ai, bj = np.nonzero(result)
+            print(f"ai={ai}, bj={bj}")
 
             result = pd.DataFrame()
             for key in return_keys:
