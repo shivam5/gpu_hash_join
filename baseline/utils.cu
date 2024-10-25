@@ -1,5 +1,6 @@
 #include "stdio.h"
 #include "stdint.h"
+#include <cassert>
 #include "helper.h"
 
 // 32 bit Murmur3 hash
@@ -62,6 +63,7 @@ void insert_hashtable(KeyValue* pHashTable, const KeyValue* kvs, uint32_t num_kv
 
     int threadblocksize = std::min(1024, (int)num_kvs);
     int gridsize = (num_kvs + threadblocksize - 1) / threadblocksize;
+    assert(gridsize * threadblocksize && "Number of threads are less");
     gpu_hashtable_insert<<<gridsize, threadblocksize>>>(pHashTable, device_kvs, num_kvs);
     cudaError_t err = cudaGetLastError();
     if (err != cudaSuccess) {
@@ -143,12 +145,19 @@ __global__ void gpu_lookup(Match* rgpu, int* rid, KeyValue* t1, KeyValue* t2dev_
     {
         uint32_t k = t2dev_kvs[threadid].key;
         uint32_t v = t2dev_kvs[threadid].value;
-        uint32_t hval = hash(k);
-        if (t1[hval].key == k) {
-            uint32_t pos =  atomicAdd(rid, 1);
-            rgpu[pos].key = k;
-            rgpu[pos].value1 = t1[hval].value;
-            rgpu[pos].value2 = v;
+        uint32_t slot = hash(k);
+        while (true) {
+            if (t1[slot].key == k) {
+                uint32_t pos =  atomicAdd(rid, 1);
+                rgpu[pos].key = k;
+                rgpu[pos].value1 = t1[slot].value;
+                rgpu[pos].value2 = v;
+                return;
+            }
+            else if (t1[slot].key == kEmpty) {
+                return;
+            }
+            slot = (slot + 1) & (maxCapacity-1);
         }
     }
 }
