@@ -22,10 +22,12 @@ def generate_random_dict(size=100, max_id=10, max_val=100, seed=42):
 
     return random_dict
 
-def d2mat(table: pd.DataFrame | dict, domain: list) -> np.ndarray:
+def d2mat(table: pd.DataFrame | dict, join_key: str, domain: list) -> np.ndarray:
     """
     Args:
         table: Table in dictionary or pandas DataFrame
+        join_key: Key used for join given as a string
+        domain: Domain of the key represented as a list
     Returns:
         matrix: Matrix representation of table id.
 
@@ -41,9 +43,9 @@ def d2mat(table: pd.DataFrame | dict, domain: list) -> np.ndarray:
     which follows how pandas DataFrames are dumped.
     """
     if isinstance(table, dict):
-        ids = list(table['id'].values())
+        ids = list(table[join_key].values())
     elif isinstance(table, pd.DataFrame):
-        ids = list(table['id'].values)
+        ids = list(table[join_key].values)
 
     rows = len(ids)
     cols = len(domain)

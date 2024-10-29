@@ -18,8 +18,8 @@ class TableJoinMatmul(TableJoin):
         elif isinstance(join_key, str):
             domain = list(set(self.table_a[join_key].values).union(set(self.table_b[join_key].values)))
 
-            mat_a = utils.d2mat(self.table_a, domain)
-            mat_b = utils.d2mat(self.table_b, domain)
+            mat_a = utils.d2mat(self.table_a, join_key, domain)
+            mat_b = utils.d2mat(self.table_b, join_key, domain)
 
             mult = self.matmul(mat_a, mat_b.T)
             ai, bj = np.nonzero(mult)
