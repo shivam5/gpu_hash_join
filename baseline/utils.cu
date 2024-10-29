@@ -33,7 +33,7 @@ __global__ void gpu_hashtable_insert(KeyValue* hashtable, const KeyValue* kvs, u
     if (threadid < numkvs)
     {
         uint32_t key = kvs[threadid].key;
-        uint32_t value = kvs[threadid].value;
+        const char* value = kvs[threadid].value;
         uint32_t slot = hash(key);
         while (true)
         {
@@ -80,6 +80,7 @@ void insert_hashtable(KeyValue* pHashTable, const KeyValue* kvs, uint32_t num_kv
     cudaFree(device_kvs);
 }
 
+/*
 __global__ void gpu_hashtable_print(KeyValue* deviceArr, const KeyValue* kvs, uint32_t tsize) {
     unsigned int threadid = blockIdx.x*blockDim.x + threadIdx.x;
     if (threadid < tsize)
@@ -138,13 +139,14 @@ void print_arr_gpu(KeyValue* deviceArr, const KeyValue* kvs, uint32_t tsize) {
 
     cudaFree(device_kvs);
 }
+*/
 
-__global__ void gpu_lookup(Match* rgpu, int* rid, KeyValue* t1, KeyValue* t2dev_kvs, uint32_t s1, uint32_t s2) {
+__global__ void gpu_lookup(Match* rgpu, int* rid, KeyValue* t1, KeyValue* t2dev_kvs, uint32_t s2) {
     unsigned int threadid = blockDim.x * blockIdx.x + threadIdx.x;
     if (threadid < s2)
     {
         uint32_t k = t2dev_kvs[threadid].key;
-        uint32_t v = t2dev_kvs[threadid].value;
+        const char* v = t2dev_kvs[threadid].value;
         uint32_t slot = hash(k);
         while (true) {
             if (t1[slot].key == k) {
@@ -162,7 +164,7 @@ __global__ void gpu_lookup(Match* rgpu, int* rid, KeyValue* t1, KeyValue* t2dev_
     }
 }
 
-int findMatches(Match* result, KeyValue* t1_hash, const KeyValue* t2_kvs, uint32_t s1, uint32_t s2) {
+int findMatches(Match* result, KeyValue* t1_hash, const KeyValue* t2_kvs, uint32_t s2) {
     Match* rgpu;
     cudaMalloc(&rgpu, sizeof(Match) * s2);
     int* rid;
@@ -181,7 +183,7 @@ int findMatches(Match* result, KeyValue* t1_hash, const KeyValue* t2_kvs, uint32
     cudaEventCreate(&stop);
     cudaEventRecord(start);
 
-    gpu_lookup<<<gridsize, threadblocksize>>>(rgpu, rid, t1_hash, t2dev_kvs, s1, s2);
+    gpu_lookup<<<gridsize, threadblocksize>>>(rgpu, rid, t1_hash, t2dev_kvs, s2);
     cudaError_t err = cudaGetLastError();
     if (err != cudaSuccess) {
         printf("Kernel launch failed: %s\n", cudaGetErrorString(err));
@@ -198,6 +200,5 @@ int findMatches(Match* result, KeyValue* t1_hash, const KeyValue* t2_kvs, uint32
     cudaEventElapsedTime(&milliseconds, start, stop);
     float seconds = milliseconds / 1000.0f;
     printf("Found %d matches in %f ms (%f million keys/second)\n", rpos, milliseconds, rpos / (double)seconds / 1000000.0f);
-    
     return rpos;
 }
