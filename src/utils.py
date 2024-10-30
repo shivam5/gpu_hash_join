@@ -3,13 +3,17 @@ import pandas as pd
 import numpy as np
 
 
-def generate_random_dict(size=100, max_id=10, max_val=100, seed=42):
+def generate_random_dict(size=100, max_id=10, max_val=100, seed=42, value_key='value'):
     """
     Generates a dictionary with 'id' and 'name' keys. Each key maps to a dictionary where the
     keys are consecutive integers starting from 0 and the values are random integers.
 
     Args:
         size: The number of entries to generate.
+        max_id: Maximum ID for generated values for key `id`
+        max_val: Maximum ID for generated values for `value`
+        seed: Random seed
+        value_key: key for value given as string
     Returns:
         random_dict: A dictionary with the given format.
     """
@@ -17,7 +21,7 @@ def generate_random_dict(size=100, max_id=10, max_val=100, seed=42):
 
     random_dict = {
         'id': {i: random.randint(1, max_id) for i in range(size)},
-        'value': {i: random.randint(1, max_val) for i in range(size)}
+        value_key: {i: random.randint(1, max_val) for i in range(size)}
     }
 
     return random_dict
