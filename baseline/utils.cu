@@ -33,12 +33,12 @@ __global__ void gpu_hashtable_insert(KeyValue* hashtable, const KeyValue* kvs, u
     if (threadid < numkvs)
     {
         uint32_t key = kvs[threadid].key;
-        const char* value = kvs[threadid].value;
+        uint32_t value = kvs[threadid].value;
         uint32_t slot = hash(key);
         while (true)
         {
             uint32_t prev = atomicCAS(&hashtable[slot].key, kEmpty, key);
-            if (prev == kEmpty || prev == key)
+            if (prev == kEmpty)
             {
                 hashtable[slot].value = value;
                 return;
@@ -75,8 +75,7 @@ void insert_hashtable(KeyValue* pHashTable, const KeyValue* kvs, uint32_t num_kv
     float milliseconds = 0;
     cudaEventElapsedTime(&milliseconds, start, stop);
     float seconds = milliseconds / 1000.0f;
-    printf("GPU inserted %d items in %f ms (%f million keys/second)\n", num_kvs, milliseconds, num_kvs / (double)seconds / 1000000.0f);
-
+    // printf("GPU inserted %d items in %f ms (%f million keys/second)\n", num_kvs, milliseconds, num_kvs / (double)seconds / 1000000.0f);
     cudaFree(device_kvs);
 }
 
@@ -146,7 +145,7 @@ __global__ void gpu_lookup(Match* rgpu, int* rid, KeyValue* t1, KeyValue* t2dev_
     if (threadid < s2)
     {
         uint32_t k = t2dev_kvs[threadid].key;
-        const char* v = t2dev_kvs[threadid].value;
+        uint32_t v = t2dev_kvs[threadid].value;
         uint32_t slot = hash(k);
         while (true) {
             if (t1[slot].key == k) {
@@ -154,9 +153,9 @@ __global__ void gpu_lookup(Match* rgpu, int* rid, KeyValue* t1, KeyValue* t2dev_
                 rgpu[pos].key = k;
                 rgpu[pos].value1 = t1[slot].value;
                 rgpu[pos].value2 = v;
-                return;
+                // printf("Key: %d v1: %d v2: %d\n", k, t1[slot].value, v);
             }
-            else if (t1[slot].key == kEmpty) {
+            else if (t1[slot].key == kEmpty || t1[slot].key != k) {
                 return;
             }
             slot = (slot + 1) & (maxCapacity-1);
@@ -164,9 +163,9 @@ __global__ void gpu_lookup(Match* rgpu, int* rid, KeyValue* t1, KeyValue* t2dev_
     }
 }
 
-int findMatches(Match* result, KeyValue* t1_hash, const KeyValue* t2_kvs, uint32_t s2) {
+int findMatches(Match* result, KeyValue* t1_hash, const KeyValue* t2_kvs, uint32_t s1, uint32_t s2) {
     Match* rgpu;
-    cudaMalloc(&rgpu, sizeof(Match) * s2);
+    cudaMalloc(&rgpu, sizeof(Match) * s1 * s2);
     int* rid;
     cudaMalloc(&rid, sizeof(int));
     cudaMemset(rid, 0, sizeof(int));
@@ -183,6 +182,8 @@ int findMatches(Match* result, KeyValue* t1_hash, const KeyValue* t2_kvs, uint32
     cudaEventCreate(&stop);
     cudaEventRecord(start);
 
+    assert(gridsize * threadblocksize >= s2 && "Number of threads are not sufficient");
+    printf("Grid size: %d thread block: %d\n", gridsize, threadblocksize);
     gpu_lookup<<<gridsize, threadblocksize>>>(rgpu, rid, t1_hash, t2dev_kvs, s2);
     cudaError_t err = cudaGetLastError();
     if (err != cudaSuccess) {
