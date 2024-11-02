@@ -6,10 +6,12 @@ import join_pandas as jp
 import os
 
 
-N1 = ['table1M_id10', 'table1M_id100', 'table1M_id1k', 'table1M_id10k', 'table1M_id100k']
-N2 = ['table1k', 'table10k']
+N1 = ['data/table1M_id10', 'data/table1M_id100', 'data/table1M_id1k', 'data/table1M_id10k', 'data/table1M_id100k']
+N2 = ['data/table1k', 'data/table10k']
 
-if not os.path.exists('table1M_id10.csv'):
+name = N1[0]+'.csv'
+print(f"Check if {name} exists. If not, generate data.")
+if not os.path.exists(name):
     print('Generate data!')
     table1M_id10 = generate_random_dict(1000000, 10, value_key='v1')
     table1M_id100 = generate_random_dict(1000000, 100, value_key='v1')
