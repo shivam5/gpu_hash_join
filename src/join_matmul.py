@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import List
+from typing import List, Union
 import pandas as pd
 import utils
 from join import TableJoin
@@ -11,7 +11,7 @@ class TableJoinMatmul(TableJoin):
     def matmul(self, mat_a : np.ndarray, mat_b : np.ndarray) -> np.ndarray:
         print("This is an abstract method. Implementation not found.")
 
-    def inner_join(self, join_key: str | tuple, return_keys: List[str]) -> dict:
+    def inner_join(self, join_key: Union[str, tuple], return_keys: List[str]) -> dict:
         if isinstance(join_key, tuple) and len(join_key) == 2:
             raise NotImplementedError
 

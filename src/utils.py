@@ -1,6 +1,7 @@
 import random
 import pandas as pd
 import numpy as np
+from typing import Union, List
 
 
 def generate_random_dict(size=100, max_id=10, max_val=100, seed=42, value_key='value', unique_id=False):
@@ -23,7 +24,7 @@ def generate_random_dict(size=100, max_id=10, max_val=100, seed=42, value_key='v
     if unique_id:
         if size > max_id:
             print('size should be at most max_id when unique_id is True.')
-            print(f'setting size from {max_id} to be {size}.')
+            print(f'setting max_id from {max_id} to be {size}.')
             max_id = size
 
         samples = random.sample(range(max_id))
@@ -38,7 +39,8 @@ def generate_random_dict(size=100, max_id=10, max_val=100, seed=42, value_key='v
 
     return random_dict
 
-def d2mat(table: pd.DataFrame | dict, join_key: str, domain: list) -> np.ndarray:
+
+def d2mat(table: Union[pd.DataFrame, dict], join_key: str, domain: List[int]) -> np.ndarray:
     """
     Args:
         table: Table in dictionary or pandas DataFrame
@@ -62,6 +64,8 @@ def d2mat(table: pd.DataFrame | dict, join_key: str, domain: list) -> np.ndarray
         ids = list(table[join_key].values())
     elif isinstance(table, pd.DataFrame):
         ids = list(table[join_key].values)
+    else:
+        raise TypeError("table must be either a dictionary or pandas DataFrame")
 
     rows = len(ids)
     cols = len(domain)

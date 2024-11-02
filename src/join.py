@@ -1,10 +1,10 @@
 from abc import ABC, abstractmethod
 import pandas as pd
-from typing import List
+from typing import List, Union
 
 class TableJoin(ABC):
 
-    def __init__(self, table_a: dict | pd.DataFrame | str, table_b: dict | pd.DataFrame | str):
+    def __init__(self, table_a: Union[dict, pd.DataFrame, str], table_b: Union[dict, pd.DataFrame, str]):
         """
         Args:
             table_a: Table in dictionary implementation
@@ -37,7 +37,7 @@ class TableJoin(ABC):
             raise TypeError
 
     @abstractmethod
-    def inner_join(self, join_key: str | tuple, return_keys: List[str]) -> dict:
+    def inner_join(self, join_key: Union[str, tuple], return_keys: List[str]) -> dict:
         """
         Args:
             join_key: the key to perform inner join, can be tuple for left and right key
