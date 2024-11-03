@@ -5,11 +5,11 @@ import subprocess as subp
 import pandas as pd
 from ncu_metrics import *
 
-def format_metrics_output(csv_file):
-    """Format the metrics from CSV file into a readable report."""
+def format_metrics_output(txt_file):
+    """Format the metrics from txt file into a readable report."""
     try:
-        # Read CSV file
-        df = pd.read_csv(csv_file)
+        # Read txt file
+        df = pd.read_txt(txt_file)
         
         # Create formatted output
         output = ["=== NCU Profiling Results ===\n"]
@@ -85,37 +85,28 @@ def main():
         print(out[0].decode())
         os.remove(".tmp_nsight.sh")
 
-        # Second run: CSV for text output
-        csv_output = f"{args.output}.csv"
-        cmd_csv = f"ncu --metrics {metrics_str} --target-processes all --csv {csv_output} {args.extra_args} {bin_cmd}"
+        # Second run: txt for text output
+        txt_output = f"{args.output}.txt"
+        cmd_txt = f"ncu --metrics {metrics_str} --target-processes all {args.extra_args} {bin_cmd}"
         
         print("\nGenerating text report...")
-        print(cmd_csv)
+        print(cmd_txt)
         
-        with open(".tmp_csv.sh", "w") as f:
-            f.write(cmd_csv)
+        with open(".tmp_txt.sh", "w") as f:
+            f.write(cmd_txt)
             f.flush()
 
         out = subp.Popen(
-            "bash .tmp_csv.sh".split(" "),
+            "bash .tmp_txt.sh".split(" "),
             stdin=subp.PIPE,
             stdout=subp.PIPE,
             stderr=subp.STDOUT,
         ).communicate()
         print(out[0].decode())
-        os.remove(".tmp_csv.sh")
+        os.remove(".tmp_txt.sh")
 
-        # Format and save text report
-        text_output = f"{args.output}.txt"
-        formatted_output = format_metrics_output(csv_output)
-        with open(text_output, 'w') as f:
-            f.write(formatted_output)
-        
-        # Clean up CSV file
-        os.remove(csv_output)
         print(f"\nOutputs generated:")
         print(f"NSight report: {nsight_output}")
-        print(f"Text report: {text_output}")
 
     elif args.format == 'nsight':
         # Only NSight output
@@ -137,8 +128,8 @@ def main():
 
     else:  # text format
         # Only text output
-        csv_output = f"{args.output}.csv"
-        cmd = f"ncu --metrics {metrics_str} --target-processes all --csv {csv_output} {args.extra_args} {bin_cmd}"
+        txt_output = f"{args.output}.txt"
+        cmd = f"ncu --metrics {metrics_str} --target-processes all {args.extra_args} {bin_cmd}"
         print(cmd)
 
         with open(".tmp.sh", "w") as f:
@@ -153,14 +144,6 @@ def main():
         ).communicate()
         print(out[0].decode())
         os.remove(".tmp.sh")
-
-        # Format and save text report
-        formatted_output = format_metrics_output(csv_output)
-        with open(args.output, 'w') as f:
-            f.write(formatted_output)
-        
-        # Clean up CSV file
-        os.remove(csv_output)
 
 if __name__ == "__main__":
     main()
