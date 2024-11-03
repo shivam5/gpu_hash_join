@@ -85,7 +85,7 @@ void write_to_csv(const std::string& filename, Match* data, int rpos) {
 int main() {
     // generate query table
     std::string i1_file = "10k";
-    std::string i2_file = "1k";
+    std::string i2_file = "100k";
     std::string out_file = "../data/benchmark/pred_" + i1_file + "_" + i2_file + ".csv";
     std::string ref_file = "../data/benchmark/table" + i1_file + ".csv";
     int ref_key = 1;
