@@ -10,6 +10,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--bin", required=True, help="Binary executable.")
     parser.add_argument("--extra-args", default="", help="Additional arguments to pass to profiler.")
+    parser.add_argument("--output", default="ncu-perf", help="Output file.")
     args = parser.parse_args()
 
     cmd = "ncu --metrics "
@@ -22,7 +23,7 @@ def main():
     cmd += ",".join(list(METRICS_BRANCH().keys()))
 
     bin_cmd = (args.bin).strip('"').strip("'")
-    cmd += f" --target-processes all -f -o ncu-perf {args.extra_args} {bin_cmd}"
+    cmd += f" --target-processes all -f -o {args.output} {args.extra_args} {bin_cmd}"
     print(cmd)
 
     with open(".tmp.sh", "w") as f:
