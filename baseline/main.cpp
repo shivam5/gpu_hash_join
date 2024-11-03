@@ -30,7 +30,7 @@ std::vector<KeyValue> read_table(std::string file_path, int key_id, int val_id, 
     std::string line;
 
     if (!file) {
-        std::cerr << "Error opening file." << std::endl;
+        std::cerr << "Error opening file." << file_path << std::endl;
         return {};
     }
 
@@ -86,15 +86,15 @@ int main() {
     // generate query table
     std::string i1_file = "10k";
     std::string i2_file = "1k";
-    std::string out_file = "../data/benchmark/pred_" + i1_file + "_" + i2_file + ".csv";
-    std::string ref_file = "../data/benchmark/table" + i1_file + ".csv";
+    std::string out_file = "../data/pred_" + i1_file + "_" + i2_file + ".csv";
+    std::string ref_file = "../data/table" + i1_file + ".csv";
     int ref_key = 1;
     int ref_val = 2;
     int nRefs = 0;
     std::vector<KeyValue> ref = read_table(ref_file, ref_key, ref_val, nRefs);
     std::cout << "Size of ref data: " << ref.size() << " num pairs: " << nRefs << std::endl;
     int nQueries = 0;
-    std::string q_file = "../data/benchmark/table1M_id" + i2_file + ".csv";
+    std::string q_file = "../data/table1M_id" + i2_file + ".csv";
     int q_id = 1;
     int q_val = 2;
     std::vector<KeyValue> query = read_table(q_file, q_id, q_val, nQueries);
