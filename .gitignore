@@ -168,3 +168,4 @@ data/*
 data.tar
 profiling_output/ncu_metrics/*
 profiling_output/profiling_output.tar
+*.ncu-rep
