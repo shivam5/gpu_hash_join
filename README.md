@@ -48,6 +48,7 @@ python src/triton_matmul.py
 ```
 ./run_and_profile_triton.sh
 ```
+The profiling output generate from this are saved here to download - [link](https://gtvault-my.sharepoint.com/:u:/g/personal/smittal98_gatech_edu/EQSggxAiRk5DuHKpxTXOk7UB85DKQ4X92NeBV5Fede1HCg?e=JfaF8x)
 4. Run profiler script for cuda baseline:
 ```
 ./run_and_profile_cuda_baseline.sh
