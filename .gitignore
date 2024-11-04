@@ -163,3 +163,8 @@ cython_debug/
 gpu_hash_join/
 hash_join_env/
 a.out
+new_data/*
+data/*
+data.tar
+profiling_output/ncu_metrics/*
+profiling_output/profiling_output.tar
