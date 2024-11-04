@@ -41,6 +41,7 @@ python src/triton_matmul.py
 ```
 
 
+
 ## Performance benchmarking
 1. Download [data](https://gtvault-my.sharepoint.com/:u:/g/personal/smittal98_gatech_edu/EWVMBa56y2BFtU9BZyyiSwoBhx1qsk-VX2WTX9Duk0ne9Q?e=orKvac) and place in this folder.
 2. Extract using `tar -xvf data.tar`. A folder named `data` should be created.
