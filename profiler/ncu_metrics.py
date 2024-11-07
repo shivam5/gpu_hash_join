@@ -8,6 +8,11 @@ def METRICS_COMPUTE():
         "lts__throughput.avg.pct_of_peak_sustained_elapsed": "L2 Cache Throughput",
         "gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed": "DRAM Throughput",
         "launch__waves_per_multiprocessor": "Waves Per SM",
+        "sm__inst_executed_pipe_tensor_op_dmma": "# of warp instructions executed by tensor pipe (DMMA ops)",
+        "sm__inst_executed_pipe_tensor_op_gmma": "# of warp instructions executed by tensor pipe",
+        "sm__inst_executed_pipe_tensor_op_hmma": "# of warp instructions executed by tensor pipe",
+        "sm__inst_executed_pipe_tensor_op_hmma_type_hfma2": "# of warp instructions executed by tensor pipe (HFMA2.MMA ops)",
+        "sm__inst_executed_pipe_tensor_op_imma": "# of warp instructions executed by tensor pipe (IMMA/IGMMA/BMMA/BGMMA)"
     }
 
 
