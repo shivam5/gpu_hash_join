@@ -4,6 +4,7 @@ import pandas as pd
 import utils
 from join import TableJoin
 import numpy as np
+import time
 
 class TableJoinMatmul(TableJoin):
 
@@ -11,7 +12,7 @@ class TableJoinMatmul(TableJoin):
     def matmul(self, mat_a : np.ndarray, mat_b : np.ndarray) -> np.ndarray:
         print("This is an abstract method. Implementation not found.")
 
-    def inner_join(self, join_key: Union[str, tuple], return_keys: List[str]) -> dict:
+    def inner_join(self, join_key: Union[str, tuple], return_keys: List[str]) -> tuple[dict, float]:
         if isinstance(join_key, tuple) and len(join_key) == 2:
             raise NotImplementedError
 
@@ -21,7 +22,9 @@ class TableJoinMatmul(TableJoin):
             mat_a = utils.d2mat(self.table_a, join_key, domain)
             mat_b = utils.d2mat(self.table_b, join_key, domain)
 
+            t0 = time.time()
             mult = self.matmul(mat_a, mat_b.T)
+            t1 = time.time()
             ai, bj = np.nonzero(mult)
 
             result = pd.DataFrame()
@@ -36,4 +39,4 @@ class TableJoinMatmul(TableJoin):
         else:
             raise TypeError
 
-        return result.to_dict()
+        return result.to_dict(), t1 -t0

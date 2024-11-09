@@ -37,7 +37,7 @@ class TableJoin(ABC):
             raise TypeError
 
     @abstractmethod
-    def inner_join(self, join_key: Union[str, tuple], return_keys: List[str]) -> dict:
+    def inner_join(self, join_key: Union[str, tuple], return_keys: List[str]) -> tuple[dict, float]:
         """
         Args:
             join_key: the key to perform inner join, can be tuple for left and right key
