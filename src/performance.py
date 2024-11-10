@@ -157,6 +157,8 @@ if __name__ == '__main__':
     # Parse command line arguments
     args = parse_args()
 
+    os.environ['TRITON_PRINT_AUTOTUNING'] = '1'
+
     # Run benchmark
     results = run_join_benchmark(args.N1, args.N2, args.data_dir)
 

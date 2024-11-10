@@ -1,10 +1,10 @@
 Generating NSight report...
-ncu --metrics sm__throughput.avg.pct_of_peak_sustained_elapsed,gpu__time_duration.sum,gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed,gpc__cycles_elapsed.max,l1tex__throughput.avg.pct_of_peak_sustained_active,lts__throughput.avg.pct_of_peak_sustained_elapsed,gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed,launch__waves_per_multiprocessor,sm__inst_executed_pipe_tensor_op_dmma,sm__inst_executed_pipe_tensor_op_gmma,sm__inst_executed_pipe_tensor_op_hmma,sm__inst_executed_pipe_tensor_op_hmma_type_hfma2,sm__inst_executed_pipe_tensor_op_imma,l1tex__t_sector_hit_rate.pct,lts__t_sector_hit_rate.pct,sm__memory_throughput.avg.pct_of_peak_sustained_elapsed,smsp__sass_inst_executed_op_memory_8b.sum,smsp__sass_inst_executed_op_memory_16b.sum,smsp__sass_inst_executed_op_memory_32b.sum,smsp__sass_inst_executed_op_memory_64b.sum,smsp__sass_inst_executed_op_memory_128b.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum,l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum,l1tex__t_requests_pipe_lsu_mem_global_op_ld.sum,l1tex__t_requests_pipe_lsu_mem_global_op_st.sum,l1tex__t_requests_pipe_lsu_mem_local_op_ld.sum,l1tex__t_requests_pipe_lsu_mem_local_op_st.sum,lts__t_sectors_srcunit_tex_op_read.sum,lts__t_sectors_srcunit_tex_op_write.sum,lts__t_requests_srcunit_tex_op_read.sum,lts__t_requests_srcunit_tex_op_write.sum,lts__t_sectors_srcunit_tex_op_read_lookup_hit.sum,lts__t_sectors_srcunit_tex_op_read_lookup_miss.sum,dram__bytes.sum,smsp__inst_executed.sum,sm__sass_thread_inst_executed_op_integer_pred_on.sum.peak_sustained,smsp__inst_executed.sum,smsp__inst_issued.sum,smsp__inst_executed.avg,smsp__inst_issued.avg,smsp__warps_active.avg.per_cycle_active,smsp__warps_eligible.avg.per_cycle_active,smsp__issue_active.avg.per_cycle_active,smsp__issue_inst0.avg.pct_of_peak_sustained_active,smsp__issue_active.avg.pct_of_peak_sustained_active,smsp__warps_active.avg.peak_sustained,smsp__maximum_warps_avg_per_active_cycle,sm__maximum_warps_per_active_cycle_pct,sm__maximum_warps_avg_per_active_cycle,sm__warps_active.avg.pct_of_peak_sustained_active,sm__warps_active.avg.per_cycle_active,launch__occupancy_limit_registers,launch__occupancy_limit_shared_mem,launch__occupancy_limit_warps,launch__occupancy_limit_blocks,smsp__inst_executed_op_branch.sum,smsp__sass_average_branch_targets_threads_uniform.pct --target-processes all -f -o profiling_output/ncu_metrics/table1M_id10_table1k.ncu-rep  python src/performance.py --N1 data/table1M_id10 --N2 data/table1k
-==PROF== Connected to process 2192966 (/storage/ice1/0/2/klee965/gpu_hash_join/hash_join_env/bin/python3.9)
-==PROF== Profiling "elementwise_kernel" - 0: 0%....50%....100% - 13 passes
-==PROF== Profiling "matmul_kernel" - 1: 0%....50%....100% - 13 passes
-==PROF== Profiling "elementwise_kernel" - 2: 0%....50%....100% - 13 passes
-==PROF== Profiling "Kernel2" - 3: 0%....50%....100% - 13 passes
+ncu --metrics sm__throughput.avg.pct_of_peak_sustained_elapsed,gpu__time_duration.sum,gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed,gpc__cycles_elapsed.max,l1tex__throughput.avg.pct_of_peak_sustained_active,lts__throughput.avg.pct_of_peak_sustained_elapsed,gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed,launch__waves_per_multiprocessor,sm__inst_executed_pipe_tensor_op_dmma,sm__inst_executed_pipe_tensor_op_gmma,sm__inst_executed_pipe_tensor_op_hmma,sm__inst_executed_pipe_tensor_op_hmma_type_hfma2,sm__inst_executed_pipe_tensor_op_imma,sm__memory_throughput.avg.pct_of_peak_sustained_elapsed,smsp__sass_inst_executed_op_memory_8b.sum,smsp__sass_inst_executed_op_memory_16b.sum,smsp__sass_inst_executed_op_memory_32b.sum,smsp__sass_inst_executed_op_memory_64b.sum,smsp__sass_inst_executed_op_memory_128b.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum,l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum,l1tex__t_requests_pipe_lsu_mem_global_op_ld.sum,l1tex__t_requests_pipe_lsu_mem_global_op_st.sum,l1tex__t_requests_pipe_lsu_mem_local_op_ld.sum,l1tex__t_requests_pipe_lsu_mem_local_op_st.sum,lts__t_sectors_srcunit_tex_op_read.sum,lts__t_sectors_srcunit_tex_op_write.sum,lts__t_requests_srcunit_tex_op_read.sum,lts__t_requests_srcunit_tex_op_write.sum,lts__t_sectors_srcunit_tex_op_read_lookup_hit.sum,lts__t_sectors_srcunit_tex_op_read_lookup_miss.sum,LTS.TriageCompute.lts__average_t_sector_hit_rate_realtime,LTS.TriageCompute.lts__average_t_sector_hit_rate_srcunit_tex_realtime,SM_B.TriageCompute.l1tex__t_sector_hit_rate,idc__request_hit_rate,l1tex__t_sector_hit_rate,l1tex__t_sector_pipe_lsu_hit_rate,l1tex__t_sector_pipe_lsu_mem_global_op_atom_hit_rate,l1tex__t_sector_pipe_lsu_mem_global_op_ld_hit_rate,l1tex__t_sector_pipe_lsu_mem_global_op_ldgsts_cache_access_hit_rate,l1tex__t_sector_pipe_lsu_mem_global_op_red_hit_rate,l1tex__t_sector_pipe_lsu_mem_global_op_st_hit_rate,l1tex__t_sector_pipe_lsu_mem_lg_hit_rate,l1tex__t_sector_pipe_lsu_mem_local_op_ld_hit_rate,l1tex__t_sector_pipe_lsu_mem_local_op_st_hit_rate,l1tex__t_sector_pipe_tex_hit_rate,l1tex__t_sector_pipe_tex_mem_surface_hit_rate,l1tex__t_sector_pipe_tex_mem_surface_op_atom_hit_rate,l1tex__t_sector_pipe_tex_mem_surface_op_ld_hit_rate,l1tex__t_sector_pipe_tex_mem_surface_op_red_hit_rate,l1tex__t_sector_pipe_tex_mem_surface_op_st_hit_rate,l1tex__t_sector_pipe_tex_mem_texture_hit_rate,l1tex__t_sector_pipe_tex_mem_texture_op_ld_hit_rate,l1tex__t_sector_pipe_tex_mem_texture_op_tex_hit_rate,lts__t_request_hit_rate,lts__t_sector_hit_rate,lts__t_sector_op_atom_dot_alu_hit_rate,lts__t_sector_op_atom_dot_cas_hit_rate,lts__t_sector_op_atom_hit_rate,lts__t_sector_op_read_hit_rate,lts__t_sector_op_red_hit_rate,lts__t_sector_op_write_hit_rate,dram__bytes.sum,smsp__inst_executed.sum,sm__sass_thread_inst_executed_op_integer_pred_on.sum.peak_sustained,smsp__inst_executed.sum,smsp__inst_issued.sum,smsp__inst_executed.avg,smsp__inst_issued.avg,smsp__warps_active.avg.per_cycle_active,smsp__warps_eligible.avg.per_cycle_active,smsp__issue_active.avg.per_cycle_active,smsp__issue_inst0.avg.pct_of_peak_sustained_active,smsp__issue_active.avg.pct_of_peak_sustained_active,smsp__warps_active.avg.peak_sustained,smsp__maximum_warps_avg_per_active_cycle,sm__maximum_warps_per_active_cycle_pct,sm__maximum_warps_avg_per_active_cycle,sm__warps_active.avg.pct_of_peak_sustained_active,sm__warps_active.avg.per_cycle_active,launch__occupancy_limit_registers,launch__occupancy_limit_shared_mem,launch__occupancy_limit_warps,launch__occupancy_limit_blocks,smsp__inst_executed_op_branch.sum,smsp__sass_average_branch_targets_threads_uniform.pct --target-processes all -f -o profiling_output/ncu_metrics/table1M_id10_table1k.ncu-rep  python src/performance.py --N1 data/table1M_id10 --N2 data/table1k
+==PROF== Connected to process 1889951 (/storage/ice1/0/2/klee965/gpu_hash_join/hash_join_env/bin/python3.9)
+==PROF== Profiling "elementwise_kernel" - 0: 0%....50%....100% - 21 passes
+==PROF== Profiling "matmul_kernel" - 1: 0%....50%....100% - 21 passes
+==PROF== Profiling "elementwise_kernel" - 2: 0%....50%....100% - 21 passes
+==PROF== Profiling "Kernel2" - 3: 0%....50%....100% - 21 passes
 Received arguments:
 N1: ['data/table1M_id10']
 N2: ['data/table1k']
@@ -13,26 +13,26 @@ Loading pre-generated data for data/table1M_id10
 Loading pre-generated data for data/table1k
 
 JOIN data/table1M_id10 data/table1k
-triton matmul: 15.959975004196167
-pytorch join: 14.220139980316162
-pandas join: 0.4260706901550293
+triton matmul: 16.28780174255371
+pytorch matmul: 5.899932146072388
+pandas join: 0.39393019676208496
 
 Benchmark Results Summary:
-------------------------------------------------------------------------------------------------------------------------
-Table 1                        Table 2              Triton (s)   Pytorch (s)  Pandas (s)   Speedup tri   Speedup torch
-------------------------------------------------------------------------------------------------------------------------
-table1M_id10                   table1k              15.9600      14.2201      0.4261       0.03        x 0.03        x
-==PROF== Disconnected from process 2192966
+--------------------------------------------------------------------------------
+Table 1                        Table 2              Triton (s)   Pandas (s)   Speedup   
+--------------------------------------------------------------------------------
+table1M_id10                   table1k              16.2878      0.3939       0.02      x
+==PROF== Disconnected from process 1889951
 ==PROF== Report: /storage/ice1/0/2/klee965/gpu_hash_join/profiling_output/ncu_metrics/table1M_id10_table1k.ncu-rep
 
 
 Generating text report...
-ncu --metrics sm__throughput.avg.pct_of_peak_sustained_elapsed,gpu__time_duration.sum,gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed,gpc__cycles_elapsed.max,l1tex__throughput.avg.pct_of_peak_sustained_active,lts__throughput.avg.pct_of_peak_sustained_elapsed,gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed,launch__waves_per_multiprocessor,sm__inst_executed_pipe_tensor_op_dmma,sm__inst_executed_pipe_tensor_op_gmma,sm__inst_executed_pipe_tensor_op_hmma,sm__inst_executed_pipe_tensor_op_hmma_type_hfma2,sm__inst_executed_pipe_tensor_op_imma,l1tex__t_sector_hit_rate.pct,lts__t_sector_hit_rate.pct,sm__memory_throughput.avg.pct_of_peak_sustained_elapsed,smsp__sass_inst_executed_op_memory_8b.sum,smsp__sass_inst_executed_op_memory_16b.sum,smsp__sass_inst_executed_op_memory_32b.sum,smsp__sass_inst_executed_op_memory_64b.sum,smsp__sass_inst_executed_op_memory_128b.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum,l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum,l1tex__t_requests_pipe_lsu_mem_global_op_ld.sum,l1tex__t_requests_pipe_lsu_mem_global_op_st.sum,l1tex__t_requests_pipe_lsu_mem_local_op_ld.sum,l1tex__t_requests_pipe_lsu_mem_local_op_st.sum,lts__t_sectors_srcunit_tex_op_read.sum,lts__t_sectors_srcunit_tex_op_write.sum,lts__t_requests_srcunit_tex_op_read.sum,lts__t_requests_srcunit_tex_op_write.sum,lts__t_sectors_srcunit_tex_op_read_lookup_hit.sum,lts__t_sectors_srcunit_tex_op_read_lookup_miss.sum,dram__bytes.sum,smsp__inst_executed.sum,sm__sass_thread_inst_executed_op_integer_pred_on.sum.peak_sustained,smsp__inst_executed.sum,smsp__inst_issued.sum,smsp__inst_executed.avg,smsp__inst_issued.avg,smsp__warps_active.avg.per_cycle_active,smsp__warps_eligible.avg.per_cycle_active,smsp__issue_active.avg.per_cycle_active,smsp__issue_inst0.avg.pct_of_peak_sustained_active,smsp__issue_active.avg.pct_of_peak_sustained_active,smsp__warps_active.avg.peak_sustained,smsp__maximum_warps_avg_per_active_cycle,sm__maximum_warps_per_active_cycle_pct,sm__maximum_warps_avg_per_active_cycle,sm__warps_active.avg.pct_of_peak_sustained_active,sm__warps_active.avg.per_cycle_active,launch__occupancy_limit_registers,launch__occupancy_limit_shared_mem,launch__occupancy_limit_warps,launch__occupancy_limit_blocks,smsp__inst_executed_op_branch.sum,smsp__sass_average_branch_targets_threads_uniform.pct --target-processes all  python src/performance.py --N1 data/table1M_id10 --N2 data/table1k
-==PROF== Connected to process 2193606 (/storage/ice1/0/2/klee965/gpu_hash_join/hash_join_env/bin/python3.9)
-==PROF== Profiling "elementwise_kernel" - 0: 0%....50%....100% - 13 passes
-==PROF== Profiling "matmul_kernel" - 1: 0%....50%....100% - 13 passes
-==PROF== Profiling "elementwise_kernel" - 2: 0%....50%....100% - 13 passes
-==PROF== Profiling "Kernel2" - 3: 0%....50%....100% - 13 passes
+ncu --metrics sm__throughput.avg.pct_of_peak_sustained_elapsed,gpu__time_duration.sum,gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed,gpc__cycles_elapsed.max,l1tex__throughput.avg.pct_of_peak_sustained_active,lts__throughput.avg.pct_of_peak_sustained_elapsed,gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed,launch__waves_per_multiprocessor,sm__inst_executed_pipe_tensor_op_dmma,sm__inst_executed_pipe_tensor_op_gmma,sm__inst_executed_pipe_tensor_op_hmma,sm__inst_executed_pipe_tensor_op_hmma_type_hfma2,sm__inst_executed_pipe_tensor_op_imma,sm__memory_throughput.avg.pct_of_peak_sustained_elapsed,smsp__sass_inst_executed_op_memory_8b.sum,smsp__sass_inst_executed_op_memory_16b.sum,smsp__sass_inst_executed_op_memory_32b.sum,smsp__sass_inst_executed_op_memory_64b.sum,smsp__sass_inst_executed_op_memory_128b.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum,l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum,l1tex__t_requests_pipe_lsu_mem_global_op_ld.sum,l1tex__t_requests_pipe_lsu_mem_global_op_st.sum,l1tex__t_requests_pipe_lsu_mem_local_op_ld.sum,l1tex__t_requests_pipe_lsu_mem_local_op_st.sum,lts__t_sectors_srcunit_tex_op_read.sum,lts__t_sectors_srcunit_tex_op_write.sum,lts__t_requests_srcunit_tex_op_read.sum,lts__t_requests_srcunit_tex_op_write.sum,lts__t_sectors_srcunit_tex_op_read_lookup_hit.sum,lts__t_sectors_srcunit_tex_op_read_lookup_miss.sum,LTS.TriageCompute.lts__average_t_sector_hit_rate_realtime,LTS.TriageCompute.lts__average_t_sector_hit_rate_srcunit_tex_realtime,SM_B.TriageCompute.l1tex__t_sector_hit_rate,idc__request_hit_rate,l1tex__t_sector_hit_rate,l1tex__t_sector_pipe_lsu_hit_rate,l1tex__t_sector_pipe_lsu_mem_global_op_atom_hit_rate,l1tex__t_sector_pipe_lsu_mem_global_op_ld_hit_rate,l1tex__t_sector_pipe_lsu_mem_global_op_ldgsts_cache_access_hit_rate,l1tex__t_sector_pipe_lsu_mem_global_op_red_hit_rate,l1tex__t_sector_pipe_lsu_mem_global_op_st_hit_rate,l1tex__t_sector_pipe_lsu_mem_lg_hit_rate,l1tex__t_sector_pipe_lsu_mem_local_op_ld_hit_rate,l1tex__t_sector_pipe_lsu_mem_local_op_st_hit_rate,l1tex__t_sector_pipe_tex_hit_rate,l1tex__t_sector_pipe_tex_mem_surface_hit_rate,l1tex__t_sector_pipe_tex_mem_surface_op_atom_hit_rate,l1tex__t_sector_pipe_tex_mem_surface_op_ld_hit_rate,l1tex__t_sector_pipe_tex_mem_surface_op_red_hit_rate,l1tex__t_sector_pipe_tex_mem_surface_op_st_hit_rate,l1tex__t_sector_pipe_tex_mem_texture_hit_rate,l1tex__t_sector_pipe_tex_mem_texture_op_ld_hit_rate,l1tex__t_sector_pipe_tex_mem_texture_op_tex_hit_rate,lts__t_request_hit_rate,lts__t_sector_hit_rate,lts__t_sector_op_atom_dot_alu_hit_rate,lts__t_sector_op_atom_dot_cas_hit_rate,lts__t_sector_op_atom_hit_rate,lts__t_sector_op_read_hit_rate,lts__t_sector_op_red_hit_rate,lts__t_sector_op_write_hit_rate,dram__bytes.sum,smsp__inst_executed.sum,sm__sass_thread_inst_executed_op_integer_pred_on.sum.peak_sustained,smsp__inst_executed.sum,smsp__inst_issued.sum,smsp__inst_executed.avg,smsp__inst_issued.avg,smsp__warps_active.avg.per_cycle_active,smsp__warps_eligible.avg.per_cycle_active,smsp__issue_active.avg.per_cycle_active,smsp__issue_inst0.avg.pct_of_peak_sustained_active,smsp__issue_active.avg.pct_of_peak_sustained_active,smsp__warps_active.avg.peak_sustained,smsp__maximum_warps_avg_per_active_cycle,sm__maximum_warps_per_active_cycle_pct,sm__maximum_warps_avg_per_active_cycle,sm__warps_active.avg.pct_of_peak_sustained_active,sm__warps_active.avg.per_cycle_active,launch__occupancy_limit_registers,launch__occupancy_limit_shared_mem,launch__occupancy_limit_warps,launch__occupancy_limit_blocks,smsp__inst_executed_op_branch.sum,smsp__sass_average_branch_targets_threads_uniform.pct --target-processes all  python src/performance.py --N1 data/table1M_id10 --N2 data/table1k
+==PROF== Connected to process 1894259 (/storage/ice1/0/2/klee965/gpu_hash_join/hash_join_env/bin/python3.9)
+==PROF== Profiling "elementwise_kernel" - 0: 0%....50%....100% - 21 passes
+==PROF== Profiling "matmul_kernel" - 1: 0%....50%....100% - 21 passes
+==PROF== Profiling "elementwise_kernel" - 2: 0%....50%....100% - 21 passes
+==PROF== Profiling "Kernel2" - 3: 0%....50%....100% - 21 passes
 Received arguments:
 N1: ['data/table1M_id10']
 N2: ['data/table1k']
@@ -41,336 +41,664 @@ Loading pre-generated data for data/table1M_id10
 Loading pre-generated data for data/table1k
 
 JOIN data/table1M_id10 data/table1k
-triton matmul: 15.893626928329468
-pytorch join: 13.366692304611206
-pandas join: 0.4991579055786133
+triton matmul: 9.910005331039429
+pytorch matmul: 3.2570011615753174
+pandas join: 0.05602741241455078
 
 Benchmark Results Summary:
-------------------------------------------------------------------------------------------------------------------------
-Table 1                        Table 2              Triton (s)   Pytorch (s)  Pandas (s)   Speedup tri   Speedup torch
-------------------------------------------------------------------------------------------------------------------------
-table1M_id10                   table1k              15.8936      13.3667      0.4992       0.03        x 0.04        x
-==PROF== Disconnected from process 2193606
-[2193606] python3.9@127.0.0.1
+--------------------------------------------------------------------------------
+Table 1                        Table 2              Triton (s)   Pandas (s)   Speedup   
+--------------------------------------------------------------------------------
+table1M_id10                   table1k              9.9100       0.0560       0.01      x
+==PROF== Disconnected from process 1894259
+[1894259] python3.9@127.0.0.1
   void at::elementwise_kernel<128, 4, void at::gpu_kernel_impl_nocast<at::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 10)]::operator ()() const::[lambda(c10::Half) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3) (1247, 1, 1)x(128, 1, 1), Context 1, Stream 7, Device 0, CC 9.0
     Section: Command line profiler metrics
-    ------------------------------------------------------------------- ----------- ------------
-    Metric Name                                                         Metric Unit Metric Value
-    ------------------------------------------------------------------- ----------- ------------
-    dram__bytes.sum                                                           Mbyte         1.30
-    gpc__cycles_elapsed.max                                                   cycle       13,678
-    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed              %        56.45
-    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                        %         4.49
-    gpu__time_duration.sum                                                       us         8.67
-    l1tex__t_requests_pipe_lsu_mem_global_op_ld.sum                                       19,938
-    l1tex__t_requests_pipe_lsu_mem_global_op_st.sum                                       19,938
-    l1tex__t_requests_pipe_lsu_mem_local_op_ld.sum                                             0
-    l1tex__t_requests_pipe_lsu_mem_local_op_st.sum                                             0
-    l1tex__t_sector_hit_rate.pct                                                  %         2.85
-    l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum                           sector      638,000
-    l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum                           sector       39,962
-    l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum                            sector            0
-    l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum                            sector            0
-    l1tex__throughput.avg.pct_of_peak_sustained_active                            %        49.75
-    launch__occupancy_limit_blocks                                            block           32
-    launch__occupancy_limit_registers                                         block           21
-    launch__occupancy_limit_shared_mem                                        block           32
-    launch__occupancy_limit_warps                                             block           16
-    launch__waves_per_multiprocessor                                                        0.59
-    lts__t_requests_srcunit_tex_op_read.sum                                 request      568,836
-    lts__t_requests_srcunit_tex_op_write.sum                                request       19,264
-    lts__t_sector_hit_rate.pct                                                    %        92.57
-    lts__t_sectors_srcunit_tex_op_read.sum                                   sector      568,838
-    lts__t_sectors_srcunit_tex_op_read_lookup_hit.sum                        sector      536,285
-    lts__t_sectors_srcunit_tex_op_read_lookup_miss.sum                       sector       59,672
-    lts__t_sectors_srcunit_tex_op_write.sum                                  sector       39,875
-    lts__throughput.avg.pct_of_peak_sustained_elapsed                             %        56.45
-    sm__inst_executed_pipe_tensor_op_dmma.avg                                  inst            0
-    sm__inst_executed_pipe_tensor_op_dmma.max                                  inst            0
-    sm__inst_executed_pipe_tensor_op_dmma.min                                  inst            0
-    sm__inst_executed_pipe_tensor_op_dmma.sum                                  inst            0
-    sm__inst_executed_pipe_tensor_op_gmma.avg                                  inst            0
-    sm__inst_executed_pipe_tensor_op_gmma.max                                  inst            0
-    sm__inst_executed_pipe_tensor_op_gmma.min                                  inst            0
-    sm__inst_executed_pipe_tensor_op_gmma.sum                                  inst            0
-    sm__inst_executed_pipe_tensor_op_hmma.avg                                  inst       151.05
-    sm__inst_executed_pipe_tensor_op_hmma.max                                  inst          160
-    sm__inst_executed_pipe_tensor_op_hmma.min                                  inst          144
-    sm__inst_executed_pipe_tensor_op_hmma.sum                                  inst       19,938
-    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.avg                       inst       151.05
-    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.max                       inst          160
-    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.min                       inst          144
-    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.sum                       inst       19,938
-    sm__inst_executed_pipe_tensor_op_imma.avg                                  inst            0
-    sm__inst_executed_pipe_tensor_op_imma.max                                  inst            0
-    sm__inst_executed_pipe_tensor_op_imma.min                                  inst            0
-    sm__inst_executed_pipe_tensor_op_imma.sum                                  inst            0
-    sm__maximum_warps_avg_per_active_cycle                                     warp           64
-    sm__maximum_warps_per_active_cycle_pct                                        %          100
-    sm__memory_throughput.avg.pct_of_peak_sustained_elapsed                       %         4.16
-    sm__sass_thread_inst_executed_op_integer_pred_on.sum.peak_sustained  inst/cycle       16,896
-    sm__throughput.avg.pct_of_peak_sustained_elapsed                              %        12.52
-    sm__warps_active.avg.pct_of_peak_sustained_active                             %        54.96
-    sm__warps_active.avg.per_cycle_active                                      warp        35.17
-    smsp__inst_executed.avg                                                    inst     1,623.87
-    smsp__inst_executed.sum                                                    inst      857,405
-    smsp__inst_executed_op_branch.sum                                          inst       99,715
-    smsp__inst_issued.avg                                                      inst     1,687.61
-    smsp__inst_issued.sum                                                      inst      891,058
-    smsp__issue_active.avg.pct_of_peak_sustained_active                           %        18.12
-    smsp__issue_active.avg.per_cycle_active                                                 0.18
-    smsp__issue_inst0.avg.pct_of_peak_sustained_active                            %        81.88
-    smsp__maximum_warps_avg_per_active_cycle                                   warp           16
-    smsp__sass_average_branch_targets_threads_uniform.pct                         %       100.00
-    smsp__sass_inst_executed_op_memory_128b.sum                                inst            0
-    smsp__sass_inst_executed_op_memory_16b.sum                                 inst       39,876
-    smsp__sass_inst_executed_op_memory_32b.sum                                 inst            0
-    smsp__sass_inst_executed_op_memory_64b.sum                                 inst            0
-    smsp__sass_inst_executed_op_memory_8b.sum                                  inst            0
-    smsp__warps_active.avg.peak_sustained                                      warp           16
-    smsp__warps_active.avg.per_cycle_active                                    warp         8.86
-    smsp__warps_eligible.avg.per_cycle_active                                  warp         0.31
-    ------------------------------------------------------------------- ----------- ------------
+    ---------------------------------------------------------------------------- ----------- ------------
+    Metric Name                                                                  Metric Unit Metric Value
+    ---------------------------------------------------------------------------- ----------- ------------
+    dram__bytes.sum                                                                    Mbyte         1.30
+    gpc__cycles_elapsed.max                                                            cycle       13,382
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                       %        57.86
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                                 %         4.59
+    gpu__time_duration.sum                                                                us         8.48
+    l1tex__t_requests_pipe_lsu_mem_global_op_ld.sum                                                19,938
+    l1tex__t_requests_pipe_lsu_mem_global_op_st.sum                                                19,938
+    l1tex__t_requests_pipe_lsu_mem_local_op_ld.sum                                                      0
+    l1tex__t_requests_pipe_lsu_mem_local_op_st.sum                                                      0
+    l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum                                    sector      638,000
+    l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum                                    sector       39,875
+    l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum                                     sector            0
+    l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum                                     sector            0
+    l1tex__throughput.avg.pct_of_peak_sustained_active                                     %        49.21
+    launch__occupancy_limit_blocks                                                     block           32
+    launch__occupancy_limit_registers                                                  block           21
+    launch__occupancy_limit_shared_mem                                                 block           32
+    launch__occupancy_limit_warps                                                      block           16
+    launch__waves_per_multiprocessor                                                                 0.59
+    lts__t_requests_srcunit_tex_op_read.sum                                          request      570,246
+    lts__t_requests_srcunit_tex_op_write.sum                                         request       19,380
+    lts__t_sectors_srcunit_tex_op_read.sum                                            sector      569,746
+    lts__t_sectors_srcunit_tex_op_read_lookup_hit.sum                                 sector      541,789
+    lts__t_sectors_srcunit_tex_op_read_lookup_miss.sum                                sector       56,274
+    lts__t_sectors_srcunit_tex_op_write.sum                                           sector       39,875
+    lts__throughput.avg.pct_of_peak_sustained_elapsed                                      %        57.86
+    idc__request_hit_rate.max_rate                                                                      1
+    idc__request_hit_rate.pct                                                              %        71.24
+    idc__request_hit_rate.ratio                                                                      0.71
+    l1tex__t_sector_hit_rate.max_rate                                                                   1
+    l1tex__t_sector_hit_rate.pct                                                           %         2.84
+    l1tex__t_sector_hit_rate.ratio                                                                   0.03
+    l1tex__t_sector_pipe_lsu_hit_rate.max_rate                                                          1
+    l1tex__t_sector_pipe_lsu_hit_rate.pct                                                  %         2.85
+    l1tex__t_sector_pipe_lsu_hit_rate.ratio                                                          0.03
+    l1tex__t_sector_pipe_lsu_mem_global_op_atom_hit_rate.max_rate                                       1
+    l1tex__t_sector_pipe_lsu_mem_global_op_atom_hit_rate.pct                               %            0
+    l1tex__t_sector_pipe_lsu_mem_global_op_atom_hit_rate.ratio                                          0
+    l1tex__t_sector_pipe_lsu_mem_global_op_ld_hit_rate.max_rate                                         1
+    l1tex__t_sector_pipe_lsu_mem_global_op_ld_hit_rate.pct                                 %            0
+    l1tex__t_sector_pipe_lsu_mem_global_op_ld_hit_rate.ratio                                            0
+    l1tex__t_sector_pipe_lsu_mem_global_op_ldgsts_cache_access_hit_rate.max_rate                        1
+    l1tex__t_sector_pipe_lsu_mem_global_op_ldgsts_cache_access_hit_rate.pct                %            0
+    l1tex__t_sector_pipe_lsu_mem_global_op_ldgsts_cache_access_hit_rate.ratio                           0
+    l1tex__t_sector_pipe_lsu_mem_global_op_red_hit_rate.max_rate                                        1
+    l1tex__t_sector_pipe_lsu_mem_global_op_red_hit_rate.pct                                %            0
+    l1tex__t_sector_pipe_lsu_mem_global_op_red_hit_rate.ratio                                           0
+    l1tex__t_sector_pipe_lsu_mem_global_op_st_hit_rate.max_rate                                         1
+    l1tex__t_sector_pipe_lsu_mem_global_op_st_hit_rate.pct                                 %        48.34
+    l1tex__t_sector_pipe_lsu_mem_global_op_st_hit_rate.ratio                                         0.48
+    l1tex__t_sector_pipe_lsu_mem_lg_hit_rate.max_rate                                                   1
+    l1tex__t_sector_pipe_lsu_mem_lg_hit_rate.pct                                           %         2.85
+    l1tex__t_sector_pipe_lsu_mem_lg_hit_rate.ratio                                                   0.03
+    l1tex__t_sector_pipe_lsu_mem_local_op_ld_hit_rate.max_rate                                          1
+    l1tex__t_sector_pipe_lsu_mem_local_op_ld_hit_rate.pct                                  %            0
+    l1tex__t_sector_pipe_lsu_mem_local_op_ld_hit_rate.ratio                                             0
+    l1tex__t_sector_pipe_lsu_mem_local_op_st_hit_rate.max_rate                                          1
+    l1tex__t_sector_pipe_lsu_mem_local_op_st_hit_rate.pct                                  %            0
+    l1tex__t_sector_pipe_lsu_mem_local_op_st_hit_rate.ratio                                             0
+    l1tex__t_sector_pipe_tex_hit_rate.max_rate                                                          1
+    l1tex__t_sector_pipe_tex_hit_rate.pct                                                  %            0
+    l1tex__t_sector_pipe_tex_hit_rate.ratio                                                             0
+    l1tex__t_sector_pipe_tex_mem_surface_hit_rate.max_rate                                              1
+    l1tex__t_sector_pipe_tex_mem_surface_hit_rate.pct                                      %            0
+    l1tex__t_sector_pipe_tex_mem_surface_hit_rate.ratio                                                 0
+    l1tex__t_sector_pipe_tex_mem_surface_op_atom_hit_rate.max_rate                                      1
+    l1tex__t_sector_pipe_tex_mem_surface_op_atom_hit_rate.pct                              %            0
+    l1tex__t_sector_pipe_tex_mem_surface_op_atom_hit_rate.ratio                                         0
+    l1tex__t_sector_pipe_tex_mem_surface_op_ld_hit_rate.max_rate                                        1
+    l1tex__t_sector_pipe_tex_mem_surface_op_ld_hit_rate.pct                                %            0
+    l1tex__t_sector_pipe_tex_mem_surface_op_ld_hit_rate.ratio                                           0
+    l1tex__t_sector_pipe_tex_mem_surface_op_red_hit_rate.max_rate                                       1
+    l1tex__t_sector_pipe_tex_mem_surface_op_red_hit_rate.pct                               %            0
+    l1tex__t_sector_pipe_tex_mem_surface_op_red_hit_rate.ratio                                          0
+    l1tex__t_sector_pipe_tex_mem_surface_op_st_hit_rate.max_rate                                        1
+    l1tex__t_sector_pipe_tex_mem_surface_op_st_hit_rate.pct                                %            0
+    l1tex__t_sector_pipe_tex_mem_surface_op_st_hit_rate.ratio                                           0
+    l1tex__t_sector_pipe_tex_mem_texture_hit_rate.max_rate                                              1
+    l1tex__t_sector_pipe_tex_mem_texture_hit_rate.pct                                      %            0
+    l1tex__t_sector_pipe_tex_mem_texture_hit_rate.ratio                                                 0
+    l1tex__t_sector_pipe_tex_mem_texture_op_ld_hit_rate.max_rate                                        1
+    l1tex__t_sector_pipe_tex_mem_texture_op_ld_hit_rate.pct                                %            0
+    l1tex__t_sector_pipe_tex_mem_texture_op_ld_hit_rate.ratio                                           0
+    l1tex__t_sector_pipe_tex_mem_texture_op_tex_hit_rate.max_rate                                       1
+    l1tex__t_sector_pipe_tex_mem_texture_op_tex_hit_rate.pct                               %            0
+    l1tex__t_sector_pipe_tex_mem_texture_op_tex_hit_rate.ratio                                          0
+    lts__t_request_hit_rate.max_rate                                                                    1
+    lts__t_request_hit_rate.pct                                                            %        87.94
+    lts__t_request_hit_rate.ratio                                                                    0.88
+    lts__t_sector_hit_rate.max_rate                                                                     1
+    lts__t_sector_hit_rate.pct                                                             %        92.30
+    lts__t_sector_hit_rate.ratio                                                                     0.92
+    lts__t_sector_op_atom_dot_alu_hit_rate.max_rate                                                     1
+    lts__t_sector_op_atom_dot_alu_hit_rate.pct                                             %            0
+    lts__t_sector_op_atom_dot_alu_hit_rate.ratio                                                        0
+    lts__t_sector_op_atom_dot_cas_hit_rate.max_rate                                                     1
+    lts__t_sector_op_atom_dot_cas_hit_rate.pct                                             %            0
+    lts__t_sector_op_atom_dot_cas_hit_rate.ratio                                                        0
+    lts__t_sector_op_atom_hit_rate.max_rate                                                             1
+    lts__t_sector_op_atom_hit_rate.pct                                                     %            0
+    lts__t_sector_op_atom_hit_rate.ratio                                                                0
+    lts__t_sector_op_read_hit_rate.max_rate                                                             1
+    lts__t_sector_op_read_hit_rate.pct                                                     %        92.19
+    lts__t_sector_op_read_hit_rate.ratio                                                             0.92
+    lts__t_sector_op_red_hit_rate.max_rate                                                              1
+    lts__t_sector_op_red_hit_rate.pct                                                      %            0
+    lts__t_sector_op_red_hit_rate.ratio                                                                 0
+    lts__t_sector_op_write_hit_rate.max_rate                                                            1
+    lts__t_sector_op_write_hit_rate.pct                                                    %       100.21
+    lts__t_sector_op_write_hit_rate.ratio                                                            1.00
+    sm__inst_executed_pipe_tensor_op_dmma.avg                                           inst            0
+    sm__inst_executed_pipe_tensor_op_dmma.max                                           inst            0
+    sm__inst_executed_pipe_tensor_op_dmma.min                                           inst            0
+    sm__inst_executed_pipe_tensor_op_dmma.sum                                           inst            0
+    sm__inst_executed_pipe_tensor_op_gmma.avg                                           inst            0
+    sm__inst_executed_pipe_tensor_op_gmma.max                                           inst            0
+    sm__inst_executed_pipe_tensor_op_gmma.min                                           inst            0
+    sm__inst_executed_pipe_tensor_op_gmma.sum                                           inst            0
+    sm__inst_executed_pipe_tensor_op_hmma.avg                                           inst       151.05
+    sm__inst_executed_pipe_tensor_op_hmma.max                                           inst          160
+    sm__inst_executed_pipe_tensor_op_hmma.min                                           inst          144
+    sm__inst_executed_pipe_tensor_op_hmma.sum                                           inst       19,938
+    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.avg                                inst       151.05
+    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.max                                inst          160
+    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.min                                inst          144
+    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.sum                                inst       19,938
+    sm__inst_executed_pipe_tensor_op_imma.avg                                           inst            0
+    sm__inst_executed_pipe_tensor_op_imma.max                                           inst            0
+    sm__inst_executed_pipe_tensor_op_imma.min                                           inst            0
+    sm__inst_executed_pipe_tensor_op_imma.sum                                           inst            0
+    sm__maximum_warps_avg_per_active_cycle                                              warp           64
+    sm__maximum_warps_per_active_cycle_pct                                                 %          100
+    sm__memory_throughput.avg.pct_of_peak_sustained_elapsed                                %         4.15
+    sm__sass_thread_inst_executed_op_integer_pred_on.sum.peak_sustained           inst/cycle       16,896
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                       %        12.51
+    sm__warps_active.avg.pct_of_peak_sustained_active                                      %        54.54
+    sm__warps_active.avg.per_cycle_active                                               warp        34.91
+    smsp__inst_executed.avg                                                             inst     1,623.87
+    smsp__inst_executed.sum                                                             inst      857,405
+    smsp__inst_executed_op_branch.sum                                                   inst       99,715
+    smsp__inst_issued.avg                                                               inst     1,688.81
+    smsp__inst_issued.sum                                                               inst      891,693
+    smsp__issue_active.avg.pct_of_peak_sustained_active                                    %        17.92
+    smsp__issue_active.avg.per_cycle_active                                                          0.18
+    smsp__issue_inst0.avg.pct_of_peak_sustained_active                                     %        82.08
+    smsp__maximum_warps_avg_per_active_cycle                                            warp           16
+    smsp__sass_average_branch_targets_threads_uniform.pct                                  %       100.00
+    smsp__sass_inst_executed_op_memory_128b.sum                                         inst            0
+    smsp__sass_inst_executed_op_memory_16b.sum                                          inst       39,876
+    smsp__sass_inst_executed_op_memory_32b.sum                                          inst            0
+    smsp__sass_inst_executed_op_memory_64b.sum                                          inst            0
+    smsp__sass_inst_executed_op_memory_8b.sum                                           inst            0
+    smsp__warps_active.avg.peak_sustained                                               warp           16
+    smsp__warps_active.avg.per_cycle_active                                             warp         8.82
+    smsp__warps_eligible.avg.per_cycle_active                                           warp         0.30
+    ---------------------------------------------------------------------------- ----------- ------------
 
-  matmul_kernel (62504, 1, 1)x(256, 1, 1), Context 1, Stream 7, Device 0, CC 9.0
+  matmul_kernel (62500, 1, 1)x(128, 1, 1), Context 1, Stream 7, Device 0, CC 9.0
     Section: Command line profiler metrics
-    ------------------------------------------------------------------- ----------- -------------
-    Metric Name                                                         Metric Unit  Metric Value
-    ------------------------------------------------------------------- ----------- -------------
-    dram__bytes.sum                                                           Gbyte         54.46
-    gpc__cycles_elapsed.max                                                   cycle    59,126,264
-    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed              %         39.99
-    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                        %         39.09
-    gpu__time_duration.sum                                                       ms         41.56
-    l1tex__t_requests_pipe_lsu_mem_global_op_ld.sum                                   320,020,480
-    l1tex__t_requests_pipe_lsu_mem_global_op_st.sum                                    32,000,000
-    l1tex__t_requests_pipe_lsu_mem_local_op_ld.sum                                    687,043,968
-    l1tex__t_requests_pipe_lsu_mem_local_op_st.sum                                    283,018,112
-    l1tex__t_sector_hit_rate.pct                                                  %          4.46
-    l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum                           sector   918,058,752
-    l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum                           sector    78,552,955
-    l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum                            sector 2,748,254,444
-    l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum                            sector 1,132,072,448
-    l1tex__throughput.avg.pct_of_peak_sustained_active                            %         27.08
-    launch__occupancy_limit_blocks                                            block            32
-    launch__occupancy_limit_registers                                         block             1
-    launch__occupancy_limit_shared_mem                                        block             3
-    launch__occupancy_limit_warps                                             block             8
-    launch__waves_per_multiprocessor                                                       473.52
-    lts__t_requests_srcunit_tex_op_read.sum                                 request 1,082,363,244
-    lts__t_requests_srcunit_tex_op_write.sum                                request   324,402,546
-    lts__t_sector_hit_rate.pct                                                    %         76.96
-    lts__t_sectors_srcunit_tex_op_read.sum                                   sector 3,469,997,772
-    lts__t_sectors_srcunit_tex_op_read_lookup_hit.sum                        sector 2,545,335,757
-    lts__t_sectors_srcunit_tex_op_read_lookup_miss.sum                       sector   956,284,743
-    lts__t_sectors_srcunit_tex_op_write.sum                                  sector 1,209,366,317
-    lts__throughput.avg.pct_of_peak_sustained_elapsed                             %         50.01
-    sm__inst_executed_pipe_tensor_op_dmma.avg                                  inst             0
-    sm__inst_executed_pipe_tensor_op_dmma.max                                  inst             0
-    sm__inst_executed_pipe_tensor_op_dmma.min                                  inst             0
-    sm__inst_executed_pipe_tensor_op_dmma.sum                                  inst             0
-    sm__inst_executed_pipe_tensor_op_gmma.avg                                  inst    151,524.85
-    sm__inst_executed_pipe_tensor_op_gmma.max                                  inst       173,120
-    sm__inst_executed_pipe_tensor_op_gmma.min                                  inst       135,360
-    sm__inst_executed_pipe_tensor_op_gmma.sum                                  inst    20,001,280
-    sm__inst_executed_pipe_tensor_op_hmma.avg                                  inst    151,524.85
-    sm__inst_executed_pipe_tensor_op_hmma.max                                  inst       173,120
-    sm__inst_executed_pipe_tensor_op_hmma.min                                  inst       135,360
-    sm__inst_executed_pipe_tensor_op_hmma.sum                                  inst    20,001,280
-    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.avg                       inst             0
-    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.max                       inst             0
-    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.min                       inst             0
-    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.sum                       inst             0
-    sm__inst_executed_pipe_tensor_op_imma.avg                                  inst             0
-    sm__inst_executed_pipe_tensor_op_imma.max                                  inst             0
-    sm__inst_executed_pipe_tensor_op_imma.min                                  inst             0
-    sm__inst_executed_pipe_tensor_op_imma.sum                                  inst             0
-    sm__maximum_warps_avg_per_active_cycle                                     warp             8
-    sm__maximum_warps_per_active_cycle_pct                                        %         12.50
-    sm__memory_throughput.avg.pct_of_peak_sustained_elapsed                       %         18.10
-    sm__sass_thread_inst_executed_op_integer_pred_on.sum.peak_sustained  inst/cycle        16,896
-    sm__throughput.avg.pct_of_peak_sustained_elapsed                              %         18.10
-    sm__warps_active.avg.pct_of_peak_sustained_active                             %         12.23
-    sm__warps_active.avg.per_cycle_active                                      warp          7.83
-    smsp__inst_executed.avg                                                    inst  8,563,994.42
-    smsp__inst_executed.sum                                                    inst 4,521,789,056
-    smsp__inst_executed_op_branch.sum                                          inst     4,000,192
-    smsp__inst_issued.avg                                                      inst  8,564,002.42
-    smsp__inst_issued.sum                                                      inst 4,521,793,280
-    smsp__issue_active.avg.pct_of_peak_sustained_active                           %         14.12
-    smsp__issue_active.avg.per_cycle_active                                                  0.14
-    smsp__issue_inst0.avg.pct_of_peak_sustained_active                            %         85.88
-    smsp__maximum_warps_avg_per_active_cycle                                   warp             2
-    smsp__sass_average_branch_targets_threads_uniform.pct                         %           100
-    smsp__sass_inst_executed_op_memory_128b.sum                                inst             0
-    smsp__sass_inst_executed_op_memory_16b.sum                                 inst   704,044,928
-    smsp__sass_inst_executed_op_memory_32b.sum                                 inst   518,033,152
-    smsp__sass_inst_executed_op_memory_64b.sum                                 inst   234,014,976
-    smsp__sass_inst_executed_op_memory_8b.sum                                  inst             0
-    smsp__warps_active.avg.peak_sustained                                      warp            16
-    smsp__warps_active.avg.per_cycle_active                                    warp          1.99
-    smsp__warps_eligible.avg.per_cycle_active                                  warp          0.17
-    ------------------------------------------------------------------- ----------- -------------
+    ---------------------------------------------------------------------------- ----------- -------------
+    Metric Name                                                                  Metric Unit  Metric Value
+    ---------------------------------------------------------------------------- ----------- -------------
+    dram__bytes.sum                                                                    Gbyte          3.26
+    gpc__cycles_elapsed.max                                                            cycle    17,568,130
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                       %         75.86
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                                 %          7.97
+    gpu__time_duration.sum                                                                ms         12.20
+    l1tex__t_requests_pipe_lsu_mem_global_op_ld.sum                                            400,000,000
+    l1tex__t_requests_pipe_lsu_mem_global_op_st.sum                                             32,000,000
+    l1tex__t_requests_pipe_lsu_mem_local_op_ld.sum                                                       0
+    l1tex__t_requests_pipe_lsu_mem_local_op_st.sum                                                       0
+    l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum                                    sector 1,497,500,000
+    l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum                                    sector    78,500,000
+    l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum                                     sector             0
+    l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum                                     sector             0
+    l1tex__throughput.avg.pct_of_peak_sustained_active                                     %         75.89
+    launch__occupancy_limit_blocks                                                     block            32
+    launch__occupancy_limit_registers                                                  block             2
+    launch__occupancy_limit_shared_mem                                                 block             3
+    launch__occupancy_limit_warps                                                      block            16
+    launch__waves_per_multiprocessor                                                                236.74
+    lts__t_requests_srcunit_tex_op_read.sum                                          request   795,042,915
+    lts__t_requests_srcunit_tex_op_write.sum                                         request    31,521,219
+    lts__t_sectors_srcunit_tex_op_read.sum                                            sector   927,872,495
+    lts__t_sectors_srcunit_tex_op_read_lookup_hit.sum                                 sector   896,573,462
+    lts__t_sectors_srcunit_tex_op_read_lookup_miss.sum                                sector    59,030,888
+    lts__t_sectors_srcunit_tex_op_write.sum                                           sector    72,261,913
+    lts__throughput.avg.pct_of_peak_sustained_elapsed                                      %         52.78
+    idc__request_hit_rate.max_rate                                                                       1
+    idc__request_hit_rate.pct                                                              %         99.82
+    idc__request_hit_rate.ratio                                                                       1.00
+    l1tex__t_sector_hit_rate.max_rate                                                                    1
+    l1tex__t_sector_hit_rate.pct                                                           %         38.01
+    l1tex__t_sector_hit_rate.ratio                                                                    0.38
+    l1tex__t_sector_pipe_lsu_hit_rate.max_rate                                                           1
+    l1tex__t_sector_pipe_lsu_hit_rate.pct                                                  %         38.06
+    l1tex__t_sector_pipe_lsu_hit_rate.ratio                                                           0.38
+    l1tex__t_sector_pipe_lsu_mem_global_op_atom_hit_rate.max_rate                                        1
+    l1tex__t_sector_pipe_lsu_mem_global_op_atom_hit_rate.pct                               %             0
+    l1tex__t_sector_pipe_lsu_mem_global_op_atom_hit_rate.ratio                                           0
+    l1tex__t_sector_pipe_lsu_mem_global_op_ld_hit_rate.max_rate                                          1
+    l1tex__t_sector_pipe_lsu_mem_global_op_ld_hit_rate.pct                                 %         37.66
+    l1tex__t_sector_pipe_lsu_mem_global_op_ld_hit_rate.ratio                                          0.38
+    l1tex__t_sector_pipe_lsu_mem_global_op_ldgsts_cache_access_hit_rate.max_rate                         1
+    l1tex__t_sector_pipe_lsu_mem_global_op_ldgsts_cache_access_hit_rate.pct                %             0
+    l1tex__t_sector_pipe_lsu_mem_global_op_ldgsts_cache_access_hit_rate.ratio                            0
+    l1tex__t_sector_pipe_lsu_mem_global_op_red_hit_rate.max_rate                                         1
+    l1tex__t_sector_pipe_lsu_mem_global_op_red_hit_rate.pct                                %             0
+    l1tex__t_sector_pipe_lsu_mem_global_op_red_hit_rate.ratio                                            0
+    l1tex__t_sector_pipe_lsu_mem_global_op_st_hit_rate.max_rate                                          1
+    l1tex__t_sector_pipe_lsu_mem_global_op_st_hit_rate.pct                                 %         46.27
+    l1tex__t_sector_pipe_lsu_mem_global_op_st_hit_rate.ratio                                          0.46
+    l1tex__t_sector_pipe_lsu_mem_lg_hit_rate.max_rate                                                    1
+    l1tex__t_sector_pipe_lsu_mem_lg_hit_rate.pct                                           %         38.09
+    l1tex__t_sector_pipe_lsu_mem_lg_hit_rate.ratio                                                    0.38
+    l1tex__t_sector_pipe_lsu_mem_local_op_ld_hit_rate.max_rate                                           1
+    l1tex__t_sector_pipe_lsu_mem_local_op_ld_hit_rate.pct                                  %             0
+    l1tex__t_sector_pipe_lsu_mem_local_op_ld_hit_rate.ratio                                              0
+    l1tex__t_sector_pipe_lsu_mem_local_op_st_hit_rate.max_rate                                           1
+    l1tex__t_sector_pipe_lsu_mem_local_op_st_hit_rate.pct                                  %             0
+    l1tex__t_sector_pipe_lsu_mem_local_op_st_hit_rate.ratio                                              0
+    l1tex__t_sector_pipe_tex_hit_rate.max_rate                                                           1
+    l1tex__t_sector_pipe_tex_hit_rate.pct                                                  %             0
+    l1tex__t_sector_pipe_tex_hit_rate.ratio                                                              0
+    l1tex__t_sector_pipe_tex_mem_surface_hit_rate.max_rate                                               1
+    l1tex__t_sector_pipe_tex_mem_surface_hit_rate.pct                                      %             0
+    l1tex__t_sector_pipe_tex_mem_surface_hit_rate.ratio                                                  0
+    l1tex__t_sector_pipe_tex_mem_surface_op_atom_hit_rate.max_rate                                       1
+    l1tex__t_sector_pipe_tex_mem_surface_op_atom_hit_rate.pct                              %             0
+    l1tex__t_sector_pipe_tex_mem_surface_op_atom_hit_rate.ratio                                          0
+    l1tex__t_sector_pipe_tex_mem_surface_op_ld_hit_rate.max_rate                                         1
+    l1tex__t_sector_pipe_tex_mem_surface_op_ld_hit_rate.pct                                %             0
+    l1tex__t_sector_pipe_tex_mem_surface_op_ld_hit_rate.ratio                                            0
+    l1tex__t_sector_pipe_tex_mem_surface_op_red_hit_rate.max_rate                                        1
+    l1tex__t_sector_pipe_tex_mem_surface_op_red_hit_rate.pct                               %             0
+    l1tex__t_sector_pipe_tex_mem_surface_op_red_hit_rate.ratio                                           0
+    l1tex__t_sector_pipe_tex_mem_surface_op_st_hit_rate.max_rate                                         1
+    l1tex__t_sector_pipe_tex_mem_surface_op_st_hit_rate.pct                                %             0
+    l1tex__t_sector_pipe_tex_mem_surface_op_st_hit_rate.ratio                                            0
+    l1tex__t_sector_pipe_tex_mem_texture_hit_rate.max_rate                                               1
+    l1tex__t_sector_pipe_tex_mem_texture_hit_rate.pct                                      %             0
+    l1tex__t_sector_pipe_tex_mem_texture_hit_rate.ratio                                                  0
+    l1tex__t_sector_pipe_tex_mem_texture_op_ld_hit_rate.max_rate                                         1
+    l1tex__t_sector_pipe_tex_mem_texture_op_ld_hit_rate.pct                                %             0
+    l1tex__t_sector_pipe_tex_mem_texture_op_ld_hit_rate.ratio                                            0
+    l1tex__t_sector_pipe_tex_mem_texture_op_tex_hit_rate.max_rate                                        1
+    l1tex__t_sector_pipe_tex_mem_texture_op_tex_hit_rate.pct                               %             0
+    l1tex__t_sector_pipe_tex_mem_texture_op_tex_hit_rate.ratio                                           0
+    lts__t_request_hit_rate.max_rate                                                                     1
+    lts__t_request_hit_rate.pct                                                            %         92.90
+    lts__t_request_hit_rate.ratio                                                                     0.93
+    lts__t_sector_hit_rate.max_rate                                                                      1
+    lts__t_sector_hit_rate.pct                                                             %         95.62
+    lts__t_sector_hit_rate.ratio                                                                      0.96
+    lts__t_sector_op_atom_dot_alu_hit_rate.max_rate                                                      1
+    lts__t_sector_op_atom_dot_alu_hit_rate.pct                                             %             0
+    lts__t_sector_op_atom_dot_alu_hit_rate.ratio                                                         0
+    lts__t_sector_op_atom_dot_cas_hit_rate.max_rate                                                      1
+    lts__t_sector_op_atom_dot_cas_hit_rate.pct                                             %             0
+    lts__t_sector_op_atom_dot_cas_hit_rate.ratio                                                         0
+    lts__t_sector_op_atom_hit_rate.max_rate                                                              1
+    lts__t_sector_op_atom_hit_rate.pct                                                     %             0
+    lts__t_sector_op_atom_hit_rate.ratio                                                                 0
+    lts__t_sector_op_read_hit_rate.max_rate                                                              1
+    lts__t_sector_op_read_hit_rate.pct                                                     %         94.87
+    lts__t_sector_op_read_hit_rate.ratio                                                              0.95
+    lts__t_sector_op_red_hit_rate.max_rate                                                               1
+    lts__t_sector_op_red_hit_rate.pct                                                      %             0
+    lts__t_sector_op_red_hit_rate.ratio                                                                  0
+    lts__t_sector_op_write_hit_rate.max_rate                                                             1
+    lts__t_sector_op_write_hit_rate.pct                                                    %         99.99
+    lts__t_sector_op_write_hit_rate.ratio                                                             1.00
+    sm__inst_executed_pipe_tensor_op_dmma.avg                                           inst             0
+    sm__inst_executed_pipe_tensor_op_dmma.max                                           inst             0
+    sm__inst_executed_pipe_tensor_op_dmma.min                                           inst             0
+    sm__inst_executed_pipe_tensor_op_dmma.sum                                           inst             0
+    sm__inst_executed_pipe_tensor_op_gmma.avg                                           inst     75,757.58
+    sm__inst_executed_pipe_tensor_op_gmma.max                                           inst        76,320
+    sm__inst_executed_pipe_tensor_op_gmma.min                                           inst        75,040
+    sm__inst_executed_pipe_tensor_op_gmma.sum                                           inst    10,000,000
+    sm__inst_executed_pipe_tensor_op_hmma.avg                                           inst     75,757.58
+    sm__inst_executed_pipe_tensor_op_hmma.max                                           inst        76,320
+    sm__inst_executed_pipe_tensor_op_hmma.min                                           inst        75,040
+    sm__inst_executed_pipe_tensor_op_hmma.sum                                           inst    10,000,000
+    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.avg                                inst             0
+    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.max                                inst             0
+    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.min                                inst             0
+    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.sum                                inst             0
+    sm__inst_executed_pipe_tensor_op_imma.avg                                           inst             0
+    sm__inst_executed_pipe_tensor_op_imma.max                                           inst             0
+    sm__inst_executed_pipe_tensor_op_imma.min                                           inst             0
+    sm__inst_executed_pipe_tensor_op_imma.sum                                           inst             0
+    sm__maximum_warps_avg_per_active_cycle                                              warp             8
+    sm__maximum_warps_per_active_cycle_pct                                                 %         12.50
+    sm__memory_throughput.avg.pct_of_peak_sustained_elapsed                                %         39.21
+    sm__sass_thread_inst_executed_op_integer_pred_on.sum.peak_sustained           inst/cycle        16,896
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                       %         39.21
+    sm__warps_active.avg.pct_of_peak_sustained_active                                      %         12.45
+    sm__warps_active.avg.per_cycle_active                                               warp          7.97
+    smsp__inst_executed.avg                                                             inst  5,818,181.82
+    smsp__inst_executed.sum                                                             inst 3,072,000,000
+    smsp__inst_executed_op_branch.sum                                                   inst    10,750,000
+    smsp__inst_issued.avg                                                               inst  5,818,187.82
+    smsp__inst_issued.sum                                                               inst 3,072,003,168
+    smsp__issue_active.avg.pct_of_peak_sustained_active                                    %         33.10
+    smsp__issue_active.avg.per_cycle_active                                                           0.33
+    smsp__issue_inst0.avg.pct_of_peak_sustained_active                                     %         66.90
+    smsp__maximum_warps_avg_per_active_cycle                                            warp             2
+    smsp__sass_average_branch_targets_threads_uniform.pct                                  %           100
+    smsp__sass_inst_executed_op_memory_128b.sum                                         inst             0
+    smsp__sass_inst_executed_op_memory_16b.sum                                          inst   864,000,000
+    smsp__sass_inst_executed_op_memory_32b.sum                                          inst    16,000,000
+    smsp__sass_inst_executed_op_memory_64b.sum                                          inst             0
+    smsp__sass_inst_executed_op_memory_8b.sum                                           inst             0
+    smsp__warps_active.avg.peak_sustained                                               warp            16
+    smsp__warps_active.avg.per_cycle_active                                             warp          1.99
+    smsp__warps_eligible.avg.per_cycle_active                                           warp          0.38
+    ---------------------------------------------------------------------------- ----------- -------------
 
   void at::elementwise_kernel<128, 4, void at::gpu_kernel_impl_nocast<at::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 10)]::operator ()() const::[lambda(c10::Half) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3) (1247, 1, 1)x(128, 1, 1), Context 1, Stream 7, Device 0, CC 9.0
     Section: Command line profiler metrics
-    ------------------------------------------------------------------- ----------- ------------
-    Metric Name                                                         Metric Unit Metric Value
-    ------------------------------------------------------------------- ----------- ------------
-    dram__bytes.sum                                                           Mbyte         1.30
-    gpc__cycles_elapsed.max                                                   cycle       13,203
-    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed              %        58.19
-    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                        %         4.65
-    gpu__time_duration.sum                                                       us         8.35
-    l1tex__t_requests_pipe_lsu_mem_global_op_ld.sum                                       19,938
-    l1tex__t_requests_pipe_lsu_mem_global_op_st.sum                                       19,938
-    l1tex__t_requests_pipe_lsu_mem_local_op_ld.sum                                             0
-    l1tex__t_requests_pipe_lsu_mem_local_op_st.sum                                             0
-    l1tex__t_sector_hit_rate.pct                                                  %         2.85
-    l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum                           sector      638,000
-    l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum                           sector       39,937
-    l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum                            sector            0
-    l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum                            sector            0
-    l1tex__throughput.avg.pct_of_peak_sustained_active                            %        49.76
-    launch__occupancy_limit_blocks                                            block           32
-    launch__occupancy_limit_registers                                         block           21
-    launch__occupancy_limit_shared_mem                                        block           32
-    launch__occupancy_limit_warps                                             block           16
-    launch__waves_per_multiprocessor                                                        0.59
-    lts__t_requests_srcunit_tex_op_read.sum                                 request      566,922
-    lts__t_requests_srcunit_tex_op_write.sum                                request       19,210
-    lts__t_sector_hit_rate.pct                                                    %        92.14
-    lts__t_sectors_srcunit_tex_op_read.sum                                   sector      566,922
-    lts__t_sectors_srcunit_tex_op_read_lookup_hit.sum                        sector      540,543
-    lts__t_sectors_srcunit_tex_op_read_lookup_miss.sum                       sector       61,392
-    lts__t_sectors_srcunit_tex_op_write.sum                                  sector       39,875
-    lts__throughput.avg.pct_of_peak_sustained_elapsed                             %        58.19
-    sm__inst_executed_pipe_tensor_op_dmma.avg                                  inst            0
-    sm__inst_executed_pipe_tensor_op_dmma.max                                  inst            0
-    sm__inst_executed_pipe_tensor_op_dmma.min                                  inst            0
-    sm__inst_executed_pipe_tensor_op_dmma.sum                                  inst            0
-    sm__inst_executed_pipe_tensor_op_gmma.avg                                  inst            0
-    sm__inst_executed_pipe_tensor_op_gmma.max                                  inst            0
-    sm__inst_executed_pipe_tensor_op_gmma.min                                  inst            0
-    sm__inst_executed_pipe_tensor_op_gmma.sum                                  inst            0
-    sm__inst_executed_pipe_tensor_op_hmma.avg                                  inst       151.05
-    sm__inst_executed_pipe_tensor_op_hmma.max                                  inst          160
-    sm__inst_executed_pipe_tensor_op_hmma.min                                  inst          144
-    sm__inst_executed_pipe_tensor_op_hmma.sum                                  inst       19,938
-    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.avg                       inst       151.05
-    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.max                       inst          160
-    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.min                       inst          144
-    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.sum                       inst       19,938
-    sm__inst_executed_pipe_tensor_op_imma.avg                                  inst            0
-    sm__inst_executed_pipe_tensor_op_imma.max                                  inst            0
-    sm__inst_executed_pipe_tensor_op_imma.min                                  inst            0
-    sm__inst_executed_pipe_tensor_op_imma.sum                                  inst            0
-    sm__maximum_warps_avg_per_active_cycle                                     warp           64
-    sm__maximum_warps_per_active_cycle_pct                                        %          100
-    sm__memory_throughput.avg.pct_of_peak_sustained_elapsed                       %         4.20
-    sm__sass_thread_inst_executed_op_integer_pred_on.sum.peak_sustained  inst/cycle       16,896
-    sm__throughput.avg.pct_of_peak_sustained_elapsed                              %        12.65
-    sm__warps_active.avg.pct_of_peak_sustained_active                             %        55.01
-    sm__warps_active.avg.per_cycle_active                                      warp        35.21
-    smsp__inst_executed.avg                                                    inst     1,623.87
-    smsp__inst_executed.sum                                                    inst      857,405
-    smsp__inst_executed_op_branch.sum                                          inst       99,715
-    smsp__inst_issued.avg                                                      inst     1,687.49
-    smsp__inst_issued.sum                                                      inst      890,995
-    smsp__issue_active.avg.pct_of_peak_sustained_active                           %        18.07
-    smsp__issue_active.avg.per_cycle_active                                                 0.18
-    smsp__issue_inst0.avg.pct_of_peak_sustained_active                            %        81.93
-    smsp__maximum_warps_avg_per_active_cycle                                   warp           16
-    smsp__sass_average_branch_targets_threads_uniform.pct                         %       100.00
-    smsp__sass_inst_executed_op_memory_128b.sum                                inst            0
-    smsp__sass_inst_executed_op_memory_16b.sum                                 inst       39,876
-    smsp__sass_inst_executed_op_memory_32b.sum                                 inst            0
-    smsp__sass_inst_executed_op_memory_64b.sum                                 inst            0
-    smsp__sass_inst_executed_op_memory_8b.sum                                  inst            0
-    smsp__warps_active.avg.peak_sustained                                      warp           16
-    smsp__warps_active.avg.per_cycle_active                                    warp         8.86
-    smsp__warps_eligible.avg.per_cycle_active                                  warp         0.30
-    ------------------------------------------------------------------- ----------- ------------
+    ---------------------------------------------------------------------------- ----------- ------------
+    Metric Name                                                                  Metric Unit Metric Value
+    ---------------------------------------------------------------------------- ----------- ------------
+    dram__bytes.sum                                                                    Mbyte         1.30
+    gpc__cycles_elapsed.max                                                            cycle       13,296
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                       %        57.94
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                                 %         4.63
+    gpu__time_duration.sum                                                                us         8.42
+    l1tex__t_requests_pipe_lsu_mem_global_op_ld.sum                                                19,938
+    l1tex__t_requests_pipe_lsu_mem_global_op_st.sum                                                19,938
+    l1tex__t_requests_pipe_lsu_mem_local_op_ld.sum                                                      0
+    l1tex__t_requests_pipe_lsu_mem_local_op_st.sum                                                      0
+    l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum                                    sector      638,000
+    l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum                                    sector       39,875
+    l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum                                     sector            0
+    l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum                                     sector            0
+    l1tex__throughput.avg.pct_of_peak_sustained_active                                     %        48.65
+    launch__occupancy_limit_blocks                                                     block           32
+    launch__occupancy_limit_registers                                                  block           21
+    launch__occupancy_limit_shared_mem                                                 block           32
+    launch__occupancy_limit_warps                                                      block           16
+    launch__waves_per_multiprocessor                                                                 0.59
+    lts__t_requests_srcunit_tex_op_read.sum                                          request      567,787
+    lts__t_requests_srcunit_tex_op_write.sum                                         request       19,342
+    lts__t_sectors_srcunit_tex_op_read.sum                                            sector      566,949
+    lts__t_sectors_srcunit_tex_op_read_lookup_hit.sum                                 sector      536,222
+    lts__t_sectors_srcunit_tex_op_read_lookup_miss.sum                                sector       56,500
+    lts__t_sectors_srcunit_tex_op_write.sum                                           sector       39,875
+    lts__throughput.avg.pct_of_peak_sustained_elapsed                                      %        57.94
+    idc__request_hit_rate.max_rate                                                                      1
+    idc__request_hit_rate.pct                                                              %        71.01
+    idc__request_hit_rate.ratio                                                                      0.71
+    l1tex__t_sector_hit_rate.max_rate                                                                   1
+    l1tex__t_sector_hit_rate.pct                                                           %         2.85
+    l1tex__t_sector_hit_rate.ratio                                                                   0.03
+    l1tex__t_sector_pipe_lsu_hit_rate.max_rate                                                          1
+    l1tex__t_sector_pipe_lsu_hit_rate.pct                                                  %         2.86
+    l1tex__t_sector_pipe_lsu_hit_rate.ratio                                                          0.03
+    l1tex__t_sector_pipe_lsu_mem_global_op_atom_hit_rate.max_rate                                       1
+    l1tex__t_sector_pipe_lsu_mem_global_op_atom_hit_rate.pct                               %            0
+    l1tex__t_sector_pipe_lsu_mem_global_op_atom_hit_rate.ratio                                          0
+    l1tex__t_sector_pipe_lsu_mem_global_op_ld_hit_rate.max_rate                                         1
+    l1tex__t_sector_pipe_lsu_mem_global_op_ld_hit_rate.pct                                 %            0
+    l1tex__t_sector_pipe_lsu_mem_global_op_ld_hit_rate.ratio                                            0
+    l1tex__t_sector_pipe_lsu_mem_global_op_ldgsts_cache_access_hit_rate.max_rate                        1
+    l1tex__t_sector_pipe_lsu_mem_global_op_ldgsts_cache_access_hit_rate.pct                %            0
+    l1tex__t_sector_pipe_lsu_mem_global_op_ldgsts_cache_access_hit_rate.ratio                           0
+    l1tex__t_sector_pipe_lsu_mem_global_op_red_hit_rate.max_rate                                        1
+    l1tex__t_sector_pipe_lsu_mem_global_op_red_hit_rate.pct                                %            0
+    l1tex__t_sector_pipe_lsu_mem_global_op_red_hit_rate.ratio                                           0
+    l1tex__t_sector_pipe_lsu_mem_global_op_st_hit_rate.max_rate                                         1
+    l1tex__t_sector_pipe_lsu_mem_global_op_st_hit_rate.pct                                 %        48.50
+    l1tex__t_sector_pipe_lsu_mem_global_op_st_hit_rate.ratio                                         0.49
+    l1tex__t_sector_pipe_lsu_mem_lg_hit_rate.max_rate                                                   1
+    l1tex__t_sector_pipe_lsu_mem_lg_hit_rate.pct                                           %         2.85
+    l1tex__t_sector_pipe_lsu_mem_lg_hit_rate.ratio                                                   0.03
+    l1tex__t_sector_pipe_lsu_mem_local_op_ld_hit_rate.max_rate                                          1
+    l1tex__t_sector_pipe_lsu_mem_local_op_ld_hit_rate.pct                                  %            0
+    l1tex__t_sector_pipe_lsu_mem_local_op_ld_hit_rate.ratio                                             0
+    l1tex__t_sector_pipe_lsu_mem_local_op_st_hit_rate.max_rate                                          1
+    l1tex__t_sector_pipe_lsu_mem_local_op_st_hit_rate.pct                                  %            0
+    l1tex__t_sector_pipe_lsu_mem_local_op_st_hit_rate.ratio                                             0
+    l1tex__t_sector_pipe_tex_hit_rate.max_rate                                                          1
+    l1tex__t_sector_pipe_tex_hit_rate.pct                                                  %            0
+    l1tex__t_sector_pipe_tex_hit_rate.ratio                                                             0
+    l1tex__t_sector_pipe_tex_mem_surface_hit_rate.max_rate                                              1
+    l1tex__t_sector_pipe_tex_mem_surface_hit_rate.pct                                      %            0
+    l1tex__t_sector_pipe_tex_mem_surface_hit_rate.ratio                                                 0
+    l1tex__t_sector_pipe_tex_mem_surface_op_atom_hit_rate.max_rate                                      1
+    l1tex__t_sector_pipe_tex_mem_surface_op_atom_hit_rate.pct                              %            0
+    l1tex__t_sector_pipe_tex_mem_surface_op_atom_hit_rate.ratio                                         0
+    l1tex__t_sector_pipe_tex_mem_surface_op_ld_hit_rate.max_rate                                        1
+    l1tex__t_sector_pipe_tex_mem_surface_op_ld_hit_rate.pct                                %            0
+    l1tex__t_sector_pipe_tex_mem_surface_op_ld_hit_rate.ratio                                           0
+    l1tex__t_sector_pipe_tex_mem_surface_op_red_hit_rate.max_rate                                       1
+    l1tex__t_sector_pipe_tex_mem_surface_op_red_hit_rate.pct                               %            0
+    l1tex__t_sector_pipe_tex_mem_surface_op_red_hit_rate.ratio                                          0
+    l1tex__t_sector_pipe_tex_mem_surface_op_st_hit_rate.max_rate                                        1
+    l1tex__t_sector_pipe_tex_mem_surface_op_st_hit_rate.pct                                %            0
+    l1tex__t_sector_pipe_tex_mem_surface_op_st_hit_rate.ratio                                           0
+    l1tex__t_sector_pipe_tex_mem_texture_hit_rate.max_rate                                              1
+    l1tex__t_sector_pipe_tex_mem_texture_hit_rate.pct                                      %            0
+    l1tex__t_sector_pipe_tex_mem_texture_hit_rate.ratio                                                 0
+    l1tex__t_sector_pipe_tex_mem_texture_op_ld_hit_rate.max_rate                                        1
+    l1tex__t_sector_pipe_tex_mem_texture_op_ld_hit_rate.pct                                %            0
+    l1tex__t_sector_pipe_tex_mem_texture_op_ld_hit_rate.ratio                                           0
+    l1tex__t_sector_pipe_tex_mem_texture_op_tex_hit_rate.max_rate                                       1
+    l1tex__t_sector_pipe_tex_mem_texture_op_tex_hit_rate.pct                               %            0
+    l1tex__t_sector_pipe_tex_mem_texture_op_tex_hit_rate.ratio                                          0
+    lts__t_request_hit_rate.max_rate                                                                    1
+    lts__t_request_hit_rate.pct                                                            %        88.15
+    lts__t_request_hit_rate.ratio                                                                    0.88
+    lts__t_sector_hit_rate.max_rate                                                                     1
+    lts__t_sector_hit_rate.pct                                                             %        92.07
+    lts__t_sector_hit_rate.ratio                                                                     0.92
+    lts__t_sector_op_atom_dot_alu_hit_rate.max_rate                                                     1
+    lts__t_sector_op_atom_dot_alu_hit_rate.pct                                             %            0
+    lts__t_sector_op_atom_dot_alu_hit_rate.ratio                                                        0
+    lts__t_sector_op_atom_dot_cas_hit_rate.max_rate                                                     1
+    lts__t_sector_op_atom_dot_cas_hit_rate.pct                                             %            0
+    lts__t_sector_op_atom_dot_cas_hit_rate.ratio                                                        0
+    lts__t_sector_op_atom_hit_rate.max_rate                                                             1
+    lts__t_sector_op_atom_hit_rate.pct                                                     %            0
+    lts__t_sector_op_atom_hit_rate.ratio                                                                0
+    lts__t_sector_op_read_hit_rate.max_rate                                                             1
+    lts__t_sector_op_read_hit_rate.pct                                                     %        91.65
+    lts__t_sector_op_read_hit_rate.ratio                                                             0.92
+    lts__t_sector_op_red_hit_rate.max_rate                                                              1
+    lts__t_sector_op_red_hit_rate.pct                                                      %            0
+    lts__t_sector_op_red_hit_rate.ratio                                                                 0
+    lts__t_sector_op_write_hit_rate.max_rate                                                            1
+    lts__t_sector_op_write_hit_rate.pct                                                    %       100.00
+    lts__t_sector_op_write_hit_rate.ratio                                                            1.00
+    sm__inst_executed_pipe_tensor_op_dmma.avg                                           inst            0
+    sm__inst_executed_pipe_tensor_op_dmma.max                                           inst            0
+    sm__inst_executed_pipe_tensor_op_dmma.min                                           inst            0
+    sm__inst_executed_pipe_tensor_op_dmma.sum                                           inst            0
+    sm__inst_executed_pipe_tensor_op_gmma.avg                                           inst            0
+    sm__inst_executed_pipe_tensor_op_gmma.max                                           inst            0
+    sm__inst_executed_pipe_tensor_op_gmma.min                                           inst            0
+    sm__inst_executed_pipe_tensor_op_gmma.sum                                           inst            0
+    sm__inst_executed_pipe_tensor_op_hmma.avg                                           inst       151.05
+    sm__inst_executed_pipe_tensor_op_hmma.max                                           inst          160
+    sm__inst_executed_pipe_tensor_op_hmma.min                                           inst          144
+    sm__inst_executed_pipe_tensor_op_hmma.sum                                           inst       19,938
+    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.avg                                inst       151.05
+    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.max                                inst          160
+    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.min                                inst          144
+    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.sum                                inst       19,938
+    sm__inst_executed_pipe_tensor_op_imma.avg                                           inst            0
+    sm__inst_executed_pipe_tensor_op_imma.max                                           inst            0
+    sm__inst_executed_pipe_tensor_op_imma.min                                           inst            0
+    sm__inst_executed_pipe_tensor_op_imma.sum                                           inst            0
+    sm__maximum_warps_avg_per_active_cycle                                              warp           64
+    sm__maximum_warps_per_active_cycle_pct                                                 %          100
+    sm__memory_throughput.avg.pct_of_peak_sustained_elapsed                                %         4.24
+    sm__sass_thread_inst_executed_op_integer_pred_on.sum.peak_sustained           inst/cycle       16,896
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                       %        12.73
+    sm__warps_active.avg.pct_of_peak_sustained_active                                      %        54.62
+    sm__warps_active.avg.per_cycle_active                                               warp        34.96
+    smsp__inst_executed.avg                                                             inst     1,623.87
+    smsp__inst_executed.sum                                                             inst      857,405
+    smsp__inst_executed_op_branch.sum                                                   inst       99,715
+    smsp__inst_issued.avg                                                               inst     1,687.52
+    smsp__inst_issued.sum                                                               inst      891,010
+    smsp__issue_active.avg.pct_of_peak_sustained_active                                    %        17.71
+    smsp__issue_active.avg.per_cycle_active                                                          0.18
+    smsp__issue_inst0.avg.pct_of_peak_sustained_active                                     %        82.29
+    smsp__maximum_warps_avg_per_active_cycle                                            warp           16
+    smsp__sass_average_branch_targets_threads_uniform.pct                                  %       100.00
+    smsp__sass_inst_executed_op_memory_128b.sum                                         inst            0
+    smsp__sass_inst_executed_op_memory_16b.sum                                          inst       39,876
+    smsp__sass_inst_executed_op_memory_32b.sum                                          inst            0
+    smsp__sass_inst_executed_op_memory_64b.sum                                          inst            0
+    smsp__sass_inst_executed_op_memory_8b.sum                                           inst            0
+    smsp__warps_active.avg.peak_sustained                                               warp           16
+    smsp__warps_active.avg.per_cycle_active                                             warp         8.84
+    smsp__warps_eligible.avg.per_cycle_active                                           warp         0.30
+    ---------------------------------------------------------------------------- ----------- ------------
 
   void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_f16_256x128_64x3_tn_align2>(T1::Params) (31252, 1, 1)x(256, 1, 1), Context 1, Stream 7, Device 0, CC 9.0
     Section: Command line profiler metrics
-    ------------------------------------------------------------------- ----------- -------------
-    Metric Name                                                         Metric Unit  Metric Value
-    ------------------------------------------------------------------- ----------- -------------
-    dram__bytes.sum                                                           Gbyte          3.26
-    gpc__cycles_elapsed.max                                                   cycle    11,014,053
-    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed              %         80.84
-    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                        %         12.72
-    gpu__time_duration.sum                                                       ms          7.65
-    l1tex__t_requests_pipe_lsu_mem_global_op_ld.sum                                   118,130,000
-    l1tex__t_requests_pipe_lsu_mem_global_op_st.sum                                    16,000,000
-    l1tex__t_requests_pipe_lsu_mem_local_op_ld.sum                                              0
-    l1tex__t_requests_pipe_lsu_mem_local_op_st.sum                                              0
-    l1tex__t_sector_hit_rate.pct                                                  %         73.31
-    l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum                           sector 2,120,433,500
-    l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum                           sector    70,500,514
-    l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum                            sector             0
-    l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum                            sector             0
-    l1tex__throughput.avg.pct_of_peak_sustained_active                            %         81.37
-    launch__occupancy_limit_blocks                                            block            32
-    launch__occupancy_limit_registers                                         block             1
-    launch__occupancy_limit_shared_mem                                        block             1
-    launch__occupancy_limit_warps                                             block             8
-    launch__waves_per_multiprocessor                                                       236.76
-    lts__t_requests_srcunit_tex_op_read.sum                                 request   250,808,731
-    lts__t_requests_srcunit_tex_op_write.sum                                request    20,342,216
-    lts__t_sector_hit_rate.pct                                                    %         92.27
-    lts__t_sectors_srcunit_tex_op_read.sum                                   sector   530,383,009
-    lts__t_sectors_srcunit_tex_op_read_lookup_hit.sum                        sector   497,084,090
-    lts__t_sectors_srcunit_tex_op_read_lookup_miss.sum                       sector    57,848,920
-    lts__t_sectors_srcunit_tex_op_write.sum                                  sector    64,743,556
-    lts__throughput.avg.pct_of_peak_sustained_elapsed                             %         29.97
-    sm__inst_executed_pipe_tensor_op_dmma.avg                                  inst             0
-    sm__inst_executed_pipe_tensor_op_dmma.max                                  inst             0
-    sm__inst_executed_pipe_tensor_op_dmma.min                                  inst             0
-    sm__inst_executed_pipe_tensor_op_dmma.sum                                  inst             0
-    sm__inst_executed_pipe_tensor_op_gmma.avg                                  inst             0
-    sm__inst_executed_pipe_tensor_op_gmma.max                                  inst             0
-    sm__inst_executed_pipe_tensor_op_gmma.min                                  inst             0
-    sm__inst_executed_pipe_tensor_op_gmma.sum                                  inst             0
-    sm__inst_executed_pipe_tensor_op_hmma.avg                                  inst  2,424,397.58
-    sm__inst_executed_pipe_tensor_op_hmma.max                                  inst     2,437,120
-    sm__inst_executed_pipe_tensor_op_hmma.min                                  inst     2,416,640
-    sm__inst_executed_pipe_tensor_op_hmma.sum                                  inst   320,020,480
-    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.avg                       inst             0
-    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.max                       inst             0
-    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.min                       inst             0
-    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.sum                       inst             0
-    sm__inst_executed_pipe_tensor_op_imma.avg                                  inst             0
-    sm__inst_executed_pipe_tensor_op_imma.max                                  inst             0
-    sm__inst_executed_pipe_tensor_op_imma.min                                  inst             0
-    sm__inst_executed_pipe_tensor_op_imma.sum                                  inst             0
-    sm__maximum_warps_avg_per_active_cycle                                     warp             8
-    sm__maximum_warps_per_active_cycle_pct                                        %         12.50
-    sm__memory_throughput.avg.pct_of_peak_sustained_elapsed                       %         26.43
-    sm__sass_thread_inst_executed_op_integer_pred_on.sum.peak_sustained  inst/cycle        16,896
-    sm__throughput.avg.pct_of_peak_sustained_elapsed                              %         33.01
-    sm__warps_active.avg.pct_of_peak_sustained_active                             %         12.48
-    sm__warps_active.avg.per_cycle_active                                      warp          7.99
-    smsp__inst_executed.avg                                                    inst  2,332,062.12
-    smsp__inst_executed.sum                                                    inst 1,231,328,800
-    smsp__inst_executed_op_branch.sum                                          inst     4,500,288
-    smsp__inst_issued.avg                                                      inst  2,332,102.26
-    smsp__inst_issued.sum                                                      inst 1,231,349,992
-    smsp__issue_active.avg.pct_of_peak_sustained_active                           %         21.33
-    smsp__issue_active.avg.per_cycle_active                                                  0.21
-    smsp__issue_inst0.avg.pct_of_peak_sustained_active                            %         78.67
-    smsp__maximum_warps_avg_per_active_cycle                                   warp             2
-    smsp__sass_average_branch_targets_threads_uniform.pct                         %           100
-    smsp__sass_inst_executed_op_memory_128b.sum                                inst    82,005,248
-    smsp__sass_inst_executed_op_memory_16b.sum                                 inst             0
-    smsp__sass_inst_executed_op_memory_32b.sum                                 inst   266,267,040
-    smsp__sass_inst_executed_op_memory_64b.sum                                 inst    32,002,048
-    smsp__sass_inst_executed_op_memory_8b.sum                                  inst             0
-    smsp__warps_active.avg.peak_sustained                                      warp            16
-    smsp__warps_active.avg.per_cycle_active                                    warp          2.00
-    smsp__warps_eligible.avg.per_cycle_active                                  warp          0.30
-    ------------------------------------------------------------------- ----------- -------------
+    ---------------------------------------------------------------------------- ----------- -------------
+    Metric Name                                                                  Metric Unit  Metric Value
+    ---------------------------------------------------------------------------- ----------- -------------
+    dram__bytes.sum                                                                    Gbyte          3.26
+    gpc__cycles_elapsed.max                                                            cycle    11,013,727
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                       %         80.86
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                                 %         12.72
+    gpu__time_duration.sum                                                                ms          7.65
+    l1tex__t_requests_pipe_lsu_mem_global_op_ld.sum                                            118,130,000
+    l1tex__t_requests_pipe_lsu_mem_global_op_st.sum                                             16,000,000
+    l1tex__t_requests_pipe_lsu_mem_local_op_ld.sum                                                       0
+    l1tex__t_requests_pipe_lsu_mem_local_op_st.sum                                                       0
+    l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum                                    sector 2,120,433,500
+    l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum                                    sector    70,500,000
+    l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum                                     sector             0
+    l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum                                     sector             0
+    l1tex__throughput.avg.pct_of_peak_sustained_active                                     %         81.39
+    launch__occupancy_limit_blocks                                                     block            32
+    launch__occupancy_limit_registers                                                  block             1
+    launch__occupancy_limit_shared_mem                                                 block             1
+    launch__occupancy_limit_warps                                                      block             8
+    launch__waves_per_multiprocessor                                                                236.76
+    lts__t_requests_srcunit_tex_op_read.sum                                          request   250,618,203
+    lts__t_requests_srcunit_tex_op_write.sum                                         request    20,340,204
+    lts__t_sectors_srcunit_tex_op_read.sum                                            sector   529,617,716
+    lts__t_sectors_srcunit_tex_op_read_lookup_hit.sum                                 sector   498,161,528
+    lts__t_sectors_srcunit_tex_op_read_lookup_miss.sum                                sector    58,038,580
+    lts__t_sectors_srcunit_tex_op_write.sum                                           sector    64,742,465
+    lts__throughput.avg.pct_of_peak_sustained_elapsed                                      %         29.95
+    idc__request_hit_rate.max_rate                                                                       1
+    idc__request_hit_rate.pct                                                              %         99.80
+    idc__request_hit_rate.ratio                                                                       1.00
+    l1tex__t_sector_hit_rate.max_rate                                                                    1
+    l1tex__t_sector_hit_rate.pct                                                           %         73.30
+    l1tex__t_sector_hit_rate.ratio                                                                    0.73
+    l1tex__t_sector_pipe_lsu_hit_rate.max_rate                                                           1
+    l1tex__t_sector_pipe_lsu_hit_rate.pct                                                  %         73.30
+    l1tex__t_sector_pipe_lsu_hit_rate.ratio                                                           0.73
+    l1tex__t_sector_pipe_lsu_mem_global_op_atom_hit_rate.max_rate                                        1
+    l1tex__t_sector_pipe_lsu_mem_global_op_atom_hit_rate.pct                               %             0
+    l1tex__t_sector_pipe_lsu_mem_global_op_atom_hit_rate.ratio                                           0
+    l1tex__t_sector_pipe_lsu_mem_global_op_ld_hit_rate.max_rate                                          1
+    l1tex__t_sector_pipe_lsu_mem_global_op_ld_hit_rate.pct                                 %         74.68
+    l1tex__t_sector_pipe_lsu_mem_global_op_ld_hit_rate.ratio                                          0.75
+    l1tex__t_sector_pipe_lsu_mem_global_op_ldgsts_cache_access_hit_rate.max_rate                         1
+    l1tex__t_sector_pipe_lsu_mem_global_op_ldgsts_cache_access_hit_rate.pct                %         74.68
+    l1tex__t_sector_pipe_lsu_mem_global_op_ldgsts_cache_access_hit_rate.ratio                         0.75
+    l1tex__t_sector_pipe_lsu_mem_global_op_red_hit_rate.max_rate                                         1
+    l1tex__t_sector_pipe_lsu_mem_global_op_red_hit_rate.pct                                %             0
+    l1tex__t_sector_pipe_lsu_mem_global_op_red_hit_rate.ratio                                            0
+    l1tex__t_sector_pipe_lsu_mem_global_op_st_hit_rate.max_rate                                          1
+    l1tex__t_sector_pipe_lsu_mem_global_op_st_hit_rate.pct                                 %         31.82
+    l1tex__t_sector_pipe_lsu_mem_global_op_st_hit_rate.ratio                                          0.32
+    l1tex__t_sector_pipe_lsu_mem_lg_hit_rate.max_rate                                                    1
+    l1tex__t_sector_pipe_lsu_mem_lg_hit_rate.pct                                           %         73.30
+    l1tex__t_sector_pipe_lsu_mem_lg_hit_rate.ratio                                                    0.73
+    l1tex__t_sector_pipe_lsu_mem_local_op_ld_hit_rate.max_rate                                           1
+    l1tex__t_sector_pipe_lsu_mem_local_op_ld_hit_rate.pct                                  %             0
+    l1tex__t_sector_pipe_lsu_mem_local_op_ld_hit_rate.ratio                                              0
+    l1tex__t_sector_pipe_lsu_mem_local_op_st_hit_rate.max_rate                                           1
+    l1tex__t_sector_pipe_lsu_mem_local_op_st_hit_rate.pct                                  %             0
+    l1tex__t_sector_pipe_lsu_mem_local_op_st_hit_rate.ratio                                              0
+    l1tex__t_sector_pipe_tex_hit_rate.max_rate                                                           1
+    l1tex__t_sector_pipe_tex_hit_rate.pct                                                  %             0
+    l1tex__t_sector_pipe_tex_hit_rate.ratio                                                              0
+    l1tex__t_sector_pipe_tex_mem_surface_hit_rate.max_rate                                               1
+    l1tex__t_sector_pipe_tex_mem_surface_hit_rate.pct                                      %             0
+    l1tex__t_sector_pipe_tex_mem_surface_hit_rate.ratio                                                  0
+    l1tex__t_sector_pipe_tex_mem_surface_op_atom_hit_rate.max_rate                                       1
+    l1tex__t_sector_pipe_tex_mem_surface_op_atom_hit_rate.pct                              %             0
+    l1tex__t_sector_pipe_tex_mem_surface_op_atom_hit_rate.ratio                                          0
+    l1tex__t_sector_pipe_tex_mem_surface_op_ld_hit_rate.max_rate                                         1
+    l1tex__t_sector_pipe_tex_mem_surface_op_ld_hit_rate.pct                                %             0
+    l1tex__t_sector_pipe_tex_mem_surface_op_ld_hit_rate.ratio                                            0
+    l1tex__t_sector_pipe_tex_mem_surface_op_red_hit_rate.max_rate                                        1
+    l1tex__t_sector_pipe_tex_mem_surface_op_red_hit_rate.pct                               %             0
+    l1tex__t_sector_pipe_tex_mem_surface_op_red_hit_rate.ratio                                           0
+    l1tex__t_sector_pipe_tex_mem_surface_op_st_hit_rate.max_rate                                         1
+    l1tex__t_sector_pipe_tex_mem_surface_op_st_hit_rate.pct                                %             0
+    l1tex__t_sector_pipe_tex_mem_surface_op_st_hit_rate.ratio                                            0
+    l1tex__t_sector_pipe_tex_mem_texture_hit_rate.max_rate                                               1
+    l1tex__t_sector_pipe_tex_mem_texture_hit_rate.pct                                      %             0
+    l1tex__t_sector_pipe_tex_mem_texture_hit_rate.ratio                                                  0
+    l1tex__t_sector_pipe_tex_mem_texture_op_ld_hit_rate.max_rate                                         1
+    l1tex__t_sector_pipe_tex_mem_texture_op_ld_hit_rate.pct                                %             0
+    l1tex__t_sector_pipe_tex_mem_texture_op_ld_hit_rate.ratio                                            0
+    l1tex__t_sector_pipe_tex_mem_texture_op_tex_hit_rate.max_rate                                        1
+    l1tex__t_sector_pipe_tex_mem_texture_op_tex_hit_rate.pct                               %             0
+    l1tex__t_sector_pipe_tex_mem_texture_op_tex_hit_rate.ratio                                           0
+    lts__t_request_hit_rate.max_rate                                                                     1
+    lts__t_request_hit_rate.pct                                                            %         80.36
+    lts__t_request_hit_rate.ratio                                                                     0.80
+    lts__t_sector_hit_rate.max_rate                                                                      1
+    lts__t_sector_hit_rate.pct                                                             %         92.39
+    lts__t_sector_hit_rate.ratio                                                                      0.92
+    lts__t_sector_op_atom_dot_alu_hit_rate.max_rate                                                      1
+    lts__t_sector_op_atom_dot_alu_hit_rate.pct                                             %             0
+    lts__t_sector_op_atom_dot_alu_hit_rate.ratio                                                         0
+    lts__t_sector_op_atom_dot_cas_hit_rate.max_rate                                                      1
+    lts__t_sector_op_atom_dot_cas_hit_rate.pct                                             %             0
+    lts__t_sector_op_atom_dot_cas_hit_rate.ratio                                                         0
+    lts__t_sector_op_atom_hit_rate.max_rate                                                              1
+    lts__t_sector_op_atom_hit_rate.pct                                                     %             0
+    lts__t_sector_op_atom_hit_rate.ratio                                                                 0
+    lts__t_sector_op_read_hit_rate.max_rate                                                              1
+    lts__t_sector_op_read_hit_rate.pct                                                     %         91.00
+    lts__t_sector_op_read_hit_rate.ratio                                                              0.91
+    lts__t_sector_op_red_hit_rate.max_rate                                                               1
+    lts__t_sector_op_red_hit_rate.pct                                                      %             0
+    lts__t_sector_op_red_hit_rate.ratio                                                                  0
+    lts__t_sector_op_write_hit_rate.max_rate                                                             1
+    lts__t_sector_op_write_hit_rate.pct                                                    %         99.98
+    lts__t_sector_op_write_hit_rate.ratio                                                             1.00
+    sm__inst_executed_pipe_tensor_op_dmma.avg                                           inst             0
+    sm__inst_executed_pipe_tensor_op_dmma.max                                           inst             0
+    sm__inst_executed_pipe_tensor_op_dmma.min                                           inst             0
+    sm__inst_executed_pipe_tensor_op_dmma.sum                                           inst             0
+    sm__inst_executed_pipe_tensor_op_gmma.avg                                           inst             0
+    sm__inst_executed_pipe_tensor_op_gmma.max                                           inst             0
+    sm__inst_executed_pipe_tensor_op_gmma.min                                           inst             0
+    sm__inst_executed_pipe_tensor_op_gmma.sum                                           inst             0
+    sm__inst_executed_pipe_tensor_op_hmma.avg                                           inst  2,424,397.58
+    sm__inst_executed_pipe_tensor_op_hmma.max                                           inst     2,437,120
+    sm__inst_executed_pipe_tensor_op_hmma.min                                           inst     2,416,640
+    sm__inst_executed_pipe_tensor_op_hmma.sum                                           inst   320,020,480
+    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.avg                                inst             0
+    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.max                                inst             0
+    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.min                                inst             0
+    sm__inst_executed_pipe_tensor_op_hmma_type_hfma2.sum                                inst             0
+    sm__inst_executed_pipe_tensor_op_imma.avg                                           inst             0
+    sm__inst_executed_pipe_tensor_op_imma.max                                           inst             0
+    sm__inst_executed_pipe_tensor_op_imma.min                                           inst             0
+    sm__inst_executed_pipe_tensor_op_imma.sum                                           inst             0
+    sm__maximum_warps_avg_per_active_cycle                                              warp             8
+    sm__maximum_warps_per_active_cycle_pct                                                 %         12.50
+    sm__memory_throughput.avg.pct_of_peak_sustained_elapsed                                %         26.43
+    sm__sass_thread_inst_executed_op_integer_pred_on.sum.peak_sustained           inst/cycle        16,896
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                       %         33.01
+    sm__warps_active.avg.pct_of_peak_sustained_active                                      %         12.49
+    sm__warps_active.avg.per_cycle_active                                               warp          7.99
+    smsp__inst_executed.avg                                                             inst  2,332,062.12
+    smsp__inst_executed.sum                                                             inst 1,231,328,800
+    smsp__inst_executed_op_branch.sum                                                   inst     4,500,288
+    smsp__inst_issued.avg                                                               inst  2,332,102.20
+    smsp__inst_issued.sum                                                               inst 1,231,349,959
+    smsp__issue_active.avg.pct_of_peak_sustained_active                                    %         21.33
+    smsp__issue_active.avg.per_cycle_active                                                           0.21
+    smsp__issue_inst0.avg.pct_of_peak_sustained_active                                     %         78.67
+    smsp__maximum_warps_avg_per_active_cycle                                            warp             2
+    smsp__sass_average_branch_targets_threads_uniform.pct                                  %           100
+    smsp__sass_inst_executed_op_memory_128b.sum                                         inst    82,005,248
+    smsp__sass_inst_executed_op_memory_16b.sum                                          inst             0
+    smsp__sass_inst_executed_op_memory_32b.sum                                          inst   266,267,040
+    smsp__sass_inst_executed_op_memory_64b.sum                                          inst    32,002,048
+    smsp__sass_inst_executed_op_memory_8b.sum                                           inst             0
+    smsp__warps_active.avg.peak_sustained                                               warp            16
+    smsp__warps_active.avg.per_cycle_active                                             warp          2.00
+    smsp__warps_eligible.avg.per_cycle_active                                           warp          0.30
+    ---------------------------------------------------------------------------- ----------- -------------
 
 
 

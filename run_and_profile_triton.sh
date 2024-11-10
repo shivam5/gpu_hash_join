@@ -4,7 +4,10 @@ mkdir -p profiling_output/ncu_metrics
 mkdir -p profiling_output/outputs
 
 # Define arrays of tables
-TABLE1_ARRAY=("table1M_id10" "table1M_id100" "table1M_id1k" "table1M_id10k" "table1M_id100k")
+# TABLE1_ARRAY=("table1M_id1k")
+# TABLE2_ARRAY=("table1k")
+
+TABLE1_ARRAY=("table1M_id10" "table1M_id100" "table1M_id1k")
 TABLE2_ARRAY=("table1k")
 
 # Iterate over all combinations

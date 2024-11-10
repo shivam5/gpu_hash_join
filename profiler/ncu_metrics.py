@@ -26,8 +26,6 @@ def METRICS_ROOFLINE():
 
 def METRICS_MEMORY():
     return {
-        "l1tex__t_sector_hit_rate.pct": "L1/TEX Hit Rate",
-        "lts__t_sector_hit_rate.pct": "L2 Hit Rate",
         "sm__memory_throughput.avg.pct_of_peak_sustained_elapsed": "Mem Pipes Busy",
         "smsp__sass_inst_executed_op_memory_8b.sum": "8-bit Mem Inst",
         "smsp__sass_inst_executed_op_memory_16b.sum": "16-bit Mem Inst",
@@ -50,6 +48,39 @@ def METRICS_MEMORY():
         "lts__t_requests_srcunit_tex_op_write.sum": "# Req L2 Store",
         "lts__t_sectors_srcunit_tex_op_read_lookup_hit.sum": "# L2 Load Hit",
         "lts__t_sectors_srcunit_tex_op_read_lookup_miss.sum": "# L2 Load Misses",
+        # cache
+        "LTS.TriageCompute.lts__average_t_sector_hit_rate_realtime" : "hit rate",
+        "LTS.TriageCompute.lts__average_t_sector_hit_rate_srcunit_tex_realtime" : "hit rate",
+        "SM_B.TriageCompute.l1tex__t_sector_hit_rate" : "hit rate",
+        "idc__request_hit_rate" : "hit rate",
+        "l1tex__t_sector_hit_rate" : "hit rate",
+        "l1tex__t_sector_pipe_lsu_hit_rate" : "hit rate",
+        "l1tex__t_sector_pipe_lsu_mem_global_op_atom_hit_rate" : "hit rate",
+        "l1tex__t_sector_pipe_lsu_mem_global_op_ld_hit_rate" : "hit rate",
+        "l1tex__t_sector_pipe_lsu_mem_global_op_ldgsts_cache_access_hit_rate" : "hit rate",
+        "l1tex__t_sector_pipe_lsu_mem_global_op_red_hit_rate" : "hit rate",
+        "l1tex__t_sector_pipe_lsu_mem_global_op_st_hit_rate" : "hit rate",
+        "l1tex__t_sector_pipe_lsu_mem_lg_hit_rate" : "hit rate",
+        "l1tex__t_sector_pipe_lsu_mem_local_op_ld_hit_rate" : "hit rate",
+        "l1tex__t_sector_pipe_lsu_mem_local_op_st_hit_rate" : "hit rate",
+        "l1tex__t_sector_pipe_tex_hit_rate" : "hit rate",
+        "l1tex__t_sector_pipe_tex_mem_surface_hit_rate" : "hit rate",
+        "l1tex__t_sector_pipe_tex_mem_surface_op_atom_hit_rate" : "hit rate",
+        "l1tex__t_sector_pipe_tex_mem_surface_op_ld_hit_rate" : "hit rate",
+        "l1tex__t_sector_pipe_tex_mem_surface_op_red_hit_rate" : "hit rate",
+        "l1tex__t_sector_pipe_tex_mem_surface_op_st_hit_rate" : "hit rate",
+        "l1tex__t_sector_pipe_tex_mem_texture_hit_rate" : "hit rate",
+        "l1tex__t_sector_pipe_tex_mem_texture_op_ld_hit_rate" : "hit rate",
+        "l1tex__t_sector_pipe_tex_mem_texture_op_tex_hit_rate" : "hit rate",
+        "lts__t_request_hit_rate" : "hit rate",
+        "lts__t_sector_hit_rate" : "hit rate",
+        "lts__t_sector_op_atom_dot_alu_hit_rate" : "hit rate",
+        "lts__t_sector_op_atom_dot_cas_hit_rate" : "hit rate",
+        "lts__t_sector_op_atom_hit_rate" : "hit rate",
+        "lts__t_sector_op_read_hit_rate" : "hit rate",
+        "lts__t_sector_op_red_hit_rate" : "hit rate",
+        "lts__t_sector_op_write_hit_rate" : "hit rate",
+
     }
 
 
